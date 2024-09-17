@@ -1,0 +1,506 @@
+Ders Kodu,Ders Section,Ders Adı,Hoca,Saat
+ACCT 201,ACCT 201.A,Finansal Muhasebe,ALİNA TARAN,Perşembe 11:40 - 14:30
+ACCT 201,ACCT 201.B,Finansal Muhasebe,ALİNA TARAN,Salı 08:40 - 11:30
+ACCT 201,ACCT 201.C,Finansal Muhasebe,ALİNA TARAN,Pazartesi 08:40 - 11:30
+BUS 100,BUS 100.A,İşletmenin Temelleri,AHMET MURAT FİŞ,Salı 14:40 - 16:30 / Perşembe 16:40 - 17:30
+BUS 100,BUS 100.B,İşletmenin Temelleri,AHMET MURAT FİŞ,Salı 16:40 - 18:30 / Perşembe 16:40 - 17:30
+BUS 102,BUS 102.A,İşletmeye Giriş II (Girişimcilik),BOCHRA IDRIS,Salı 16:40 - 18:30
+BUS 102,BUS 102.B,İşletmeye Giriş II (Girişimcilik),BOCHRA IDRIS,Salı 14:40 - 16:30
+BUS 190,BUS 190.A,İşletme Bilişimine Giriş,BERİL GÜL,Salı 11:40 - 12:30
+BUS 190,BUS 190.B,İşletme Bilişimine Giriş,BERİL GÜL,Salı 12:40 - 13:30
+BUS 190,BUS 190.C,İşletme Bilişimine Giriş,BERİL GÜL,Salı 13:40 - 14:30
+BUS 190,BUS 190.D,İşletme Bilişimine Giriş,BERİL GÜL,Salı 11:40 - 12:30
+BUS 190,BUS 190.E,İşletme Bilişimine Giriş,BERİL GÜL,Salı 12:40 - 13:30
+BUS 190,BUS 190.F,İşletme Bilişimine Giriş,BERİL GÜL,Salı 13:40 - 14:30
+ECON 101,ECON 101.A,Mikroekonomi,ÖZGÜN EKİCİ,Pazartesi 15:40 - 18:30
+ECON 101,ECON 101.B,Mikroekonomi,ERCAN ASLAN,Çarşamba 12:40 - 15:30
+ECON 101,ECON 101.C,Mikroekonomi,ARSENIY SAMSONOV,Pazartesi 15:40 - 18:30
+ECON 101,ECON 101.D,Mikroekonomi,ARSENIY SAMSONOV,Çarşamba 12:40 - 15:30
+ECON 101,ECON 101.E,Mikroekonomi,ARSENIY SAMSONOV,Salı 08:40 - 11:30
+ECON 101,ECON 101.F,Mikroekonomi,BAŞAK ALTAN ÖZENER,Perşembe 13:40 - 16:30
+ENG 101,ENG 101.A,İngilizce I,HALİME KUTLUTAN AK,Çarşamba 11:40 - 13:30 / Perşembe 11:40 - 13:30
+ENG 101,ENG 101.AA,İngilizce I,ALI NEZAMI,Perşembe 13:40 - 15:30 / Cuma 09:40 - 11:30
+ENG 101,ENG 101.AB,İngilizce I,BERRİN RÜZGAR,Çarşamba 12:40 - 14:30 / Cuma 14:40 - 16:30
+ENG 101,ENG 101.AC,İngilizce I,BERRİN RÜZGAR,Pazartesi 16:40 - 18:30 / Perşembe 16:40 - 18:30
+ENG 101,ENG 101.AD,İngilizce I,BERRİN RÜZGAR,Çarşamba 08:40 - 10:30 / Cuma 10:40 - 12:30
+ENG 101,ENG 101.AE,İngilizce I,MELTEM AKPINAR YILMAZ,Pazartesi 12:40 - 14:30 / Cuma 14:40 - 16:30
+ENG 101,ENG 101.AF,İngilizce I,MELTEM AKPINAR YILMAZ,Salı 08:40 - 10:30 / Çarşamba 08:40 - 10:30
+ENG 101,ENG 101.AG,İngilizce I,MELTEM AKPINAR YILMAZ,Pazartesi 16:40 - 18:30 / Çarşamba 14:40 - 16:30
+ENG 101,ENG 101.AH,İngilizce I,ECE BETİL ARPACIOĞLU,Pazartesi 12:40 - 14:30 / Cuma 14:40 - 16:30
+ENG 101,ENG 101.AI,İngilizce I,ECE BETİL ARPACIOĞLU,Salı 08:40 - 10:30 / Çarşamba 08:40 - 10:30
+ENG 101,ENG 101.AJ,İngilizce I,ECE BETİL ARPACIOĞLU,Pazartesi 16:40 - 18:30 / Çarşamba 14:40 - 16:30
+ENG 101,ENG 101.AK,İngilizce I,DENİZ KILAVUZ,Çarşamba 11:40 - 13:30 / Perşembe 11:40 - 13:30
+ENG 101,ENG 101.AL,İngilizce I,DENİZ KILAVUZ,Pazartesi 14:40 - 16:30 / Perşembe 14:40 - 16:30
+ENG 101,ENG 101.AM,İngilizce I,DENİZ KILAVUZ,Pazartesi 16:40 - 18:30 / Çarşamba 16:40 - 18:30
+ENG 101,ENG 101.AN,İngilizce I,ELMAS ONBAŞI GÜL,Çarşamba 11:40 - 13:30 / Perşembe 11:40 - 13:30
+ENG 101,ENG 101.AO,İngilizce I,ELMAS ONBAŞI GÜL,Pazartesi 14:40 - 16:30 / Perşembe 14:40 - 16:30
+ENG 101,ENG 101.AP,İngilizce I,ELMAS ONBAŞI GÜL,Pazartesi 16:40 - 18:30 / Çarşamba 16:40 - 18:30
+ENG 101,ENG 101.AQ,İngilizce I,SANİYE ÇANCI ÇALIŞANELLER,Pazartesi 12:40 - 14:30 / Çarşamba 12:40 - 14:30
+ENG 101,ENG 101.AR,İngilizce I,SANİYE ÇANCI ÇALIŞANELLER,Çarşamba 08:40 - 10:30 / Cuma 08:40 - 10:30
+ENG 101,ENG 101.AS,İngilizce I,SANİYE ÇANCI ÇALIŞANELLER,Pazartesi 08:40 - 10:30 / Perşembe 16:40 - 18:30
+ENG 101,ENG 101.AT,İngilizce I,ZEYNEP ŞEBNEM BAYRAKTAR,Pazartesi 12:40 - 14:30 / Cuma 14:40 - 16:30
+ENG 101,ENG 101.AU,İngilizce I,ZEYNEP ŞEBNEM BAYRAKTAR,Salı 08:40 - 10:30 / Çarşamba 08:40 - 10:30
+ENG 101,ENG 101.AV,İngilizce I,ZEYNEP ŞEBNEM BAYRAKTAR,Pazartesi 08:40 - 10:30 / Cuma 10:40 - 12:30
+ENG 101,ENG 101.AX,İngilizce I,ÖMER MAHİR SARIGÜL,Salı 08:40 - 10:30 / Çarşamba 08:40 - 10:30
+ENG 101,ENG 101.AY,İngilizce I,ÖMER MAHİR SARIGÜL,Çarşamba 12:40 - 14:30 / Cuma 08:40 - 10:30
+ENG 101,ENG 101.B,İngilizce I,HALİME KUTLUTAN AK,Pazartesi 14:40 - 16:30 / Perşembe 14:40 - 16:30
+ENG 101,ENG 101.C,İngilizce I,HALİME KUTLUTAN AK,Çarşamba 08:40 - 10:30 / Cuma 08:40 - 10:30
+ENG 101,ENG 101.D,İngilizce I,IŞIL ÖZDEMİR,Çarşamba 11:40 - 13:30 / Perşembe 11:40 - 13:30
+ENG 101,ENG 101.E,İngilizce I,IŞIL ÖZDEMİR,Pazartesi 14:40 - 16:30 / Perşembe 14:40 - 16:30
+ENG 101,ENG 101.F,İngilizce I,IŞIL ÖZDEMİR,Çarşamba 08:40 - 10:30 / Cuma 08:40 - 10:30
+ENG 101,ENG 101.G,İngilizce I,SHIVA KHOEI OSKOUEI,Çarşamba 11:40 - 13:30 / Perşembe 11:40 - 13:30
+ENG 101,ENG 101.H,İngilizce I,SHIVA KHOEI OSKOUEI,Pazartesi 14:40 - 16:30 / Perşembe 14:40 - 16:30
+ENG 101,ENG 101.I,İngilizce I,SHIVA KHOEI OSKOUEI,Çarşamba 08:40 - 10:30 / Cuma 08:40 - 10:30
+ENG 101,ENG 101.J,İngilizce I,DİDEM TARTAN,Çarşamba 11:40 - 13:30 / Perşembe 11:40 - 13:30
+ENG 101,ENG 101.K,İngilizce I,DİDEM TARTAN,Pazartesi 14:40 - 16:30 / Perşembe 14:40 - 16:30
+ENG 101,ENG 101.L,İngilizce I,DİDEM TARTAN,Çarşamba 08:40 - 10:30 / Cuma 08:40 - 10:30
+ENG 101,ENG 101.M,İngilizce I,SEVGÜL AKBUZ EZGİN,Pazartesi 12:40 - 14:30 / Cuma 14:40 - 16:30
+ENG 101,ENG 101.N,İngilizce I,SEVGÜL AKBUZ EZGİN,Salı 08:40 - 10:30 / Çarşamba 08:40 - 10:30
+ENG 101,ENG 101.O,İngilizce I,SEVGÜL AKBUZ EZGİN,Pazartesi 08:40 - 10:30 / Cuma 10:40 - 12:30
+ENG 101,ENG 101.P,İngilizce I,İLKAY TUZCU TIĞLI,Pazartesi 12:40 - 14:30 / Cuma 14:40 - 16:30
+ENG 101,ENG 101.Q,İngilizce I,İLKAY TUZCU TIĞLI,Salı 08:40 - 10:30 / Çarşamba 08:40 - 10:30
+ENG 101,ENG 101.R,İngilizce I,İLKAY TUZCU TIĞLI,Pazartesi 08:40 - 10:30 / Cuma 10:40 - 12:30
+ENG 101,ENG 101.S,İngilizce I,SAADET TIKAÇ,Pazartesi 12:40 - 14:30 / Cuma 14:40 - 16:30
+ENG 101,ENG 101.T,İngilizce I,SAADET TIKAÇ,Salı 08:40 - 10:30 / Çarşamba 08:40 - 10:30
+ENG 101,ENG 101.U,İngilizce I,SAADET TIKAÇ,Pazartesi 08:40 - 10:30 / Cuma 10:40 - 12:30
+ENG 101,ENG 101.V,İngilizce I,ERAY SEVİNGİL BİLİCİ,Cuma 14:40 - 16:30 / Pazartesi 12:40 - 14:30
+ENG 101,ENG 101.W,İngilizce I,ERAY SEVİNGİL BİLİCİ,Salı 08:40 - 10:30 / Çarşamba 08:40 - 10:30
+ENG 101,ENG 101.X,İngilizce I,ERAY SEVİNGİL BİLİCİ,Pazartesi 08:40 - 10:30 / Cuma 10:40 - 12:30
+ENG 101,ENG 101.Y,İngilizce I,ALI NEZAMI,Pazartesi 15:40 - 17:30 / Cuma 14:40 - 16:30
+ENG 101,ENG 101.Z,İngilizce I,ALI NEZAMI,Çarşamba 16:40 - 18:30 / Perşembe 15:40 - 17:30
+ENG 102,ENG 102.A,İngilizce II,AYŞE NESLİHAN SABUNCU,Pazartesi 12:40 - 14:30 / Perşembe 11:40 - 13:30
+ENG 102,ENG 102.B,İngilizce II,AYŞE NESLİHAN SABUNCU,Perşembe 16:40 - 18:30 / Cuma 16:40 - 18:30
+ENG 102,ENG 102.C,İngilizce II,AYŞE NESLİHAN SABUNCU,Çarşamba 16:40 - 18:30 / Cuma 14:40 - 16:30
+ENG 102,ENG 102.D,İngilizce II,SEDEF ERDOĞAN GIOVANELLI,Pazartesi 13:40 - 15:30 / Çarşamba 12:40 - 14:30
+ENG 102,ENG 102.E,İngilizce II,SEDEF ERDOĞAN GIOVANELLI,Cuma 08:40 - 10:30 / Perşembe 12:40 - 14:30
+ENG 102,ENG 102.F,İngilizce II,SEDEF ERDOĞAN GIOVANELLI,Çarşamba 16:40 - 18:30 / Perşembe 16:40 - 18:30
+ENG 102,ENG 102.G,İngilizce II,BEDRA BETÜL ŞENOL,Pazartesi 12:40 - 14:30 / Çarşamba 12:40 - 14:30
+ENG 102,ENG 102.H,İngilizce II,BEDRA BETÜL ŞENOL,Salı 08:40 - 10:30 / Cuma 08:40 - 10:30
+ENG 102,ENG 102.I,İngilizce II,BEDRA BETÜL ŞENOL,Pazartesi 08:40 - 10:30 / Cuma 10:40 - 12:30
+ENG 102,ENG 102.J,İngilizce II,BURAK ŞENEL,Cuma 08:40 - 10:30 / Pazartesi 12:40 - 14:30
+ENG 102,ENG 102.K,İngilizce II,BURAK ŞENEL,Pazartesi 14:40 - 16:30 / Çarşamba 16:40 - 18:30
+ENG 102,ENG 102.L,İngilizce II,PETEK ŞİRİN,Salı 11:40 - 13:30 / Cuma 08:40 - 10:30
+ENG 102,ENG 102.M,İngilizce II,PETEK ŞİRİN,Salı 14:40 - 16:30 / Perşembe 14:40 - 16:30
+ENG 102,ENG 102.N,İngilizce II,NİL ALGAN BİLEN,Salı 16:40 - 18:30 / Çarşamba 16:40 - 18:30
+ENG 102,ENG 102.O,İngilizce II,SERKAN ARAS,Pazartesi 11:40 - 13:30 / Salı 12:40 - 14:30
+ENG 102,ENG 102.P,İngilizce II,NİL ALGAN BİLEN,Çarşamba 14:40 - 16:30 / Perşembe 14:40 - 16:30
+FIN 202,FIN 202.A,Finans,CANSU İSKENDEROĞLU ŞAHİN,Cuma 09:40 - 12:30
+FIN 202,FIN 202.B,Finans,CANSU İSKENDEROĞLU ŞAHİN,Perşembe 11:40 - 14:30
+HIST 201,HIST 201.A,Atatürk İlkeleri ve İnkılap Tarihi I,ÖZLEM DİLBER,Pazartesi 14:40 - 16:30
+HIST 201,HIST 201.B,Atatürk İlkeleri ve İnkılap Tarihi I,ÖZLEM DİLBER,Pazartesi 16:40 - 18:30
+HIST 201,HIST 201.C,Atatürk İlkeleri ve İnkılap Tarihi I,ÖZKAN AKPINAR,Cuma 16:40 - 18:30
+HIST 201,HIST 201.D,Atatürk İlkeleri ve İnkılap Tarihi I,GÜLDENİZ KIBRIS,Çarşamba 16:40 - 18:30
+HIST 201,HIST 201.E,Atatürk İlkeleri ve İnkılap Tarihi I,ÖZLEM DİLBER,Salı 14:40 - 16:30
+HIST 201,HIST 201.F,Atatürk İlkeleri ve İnkılap Tarihi I,ÖZKAN AKPINAR,Perşembe 16:40 - 18:30
+HIST 201,HIST 201.G,Atatürk İlkeleri ve İnkılap Tarihi I,ÖZKAN AKPINAR,Perşembe 14:40 - 16:30
+HIST 201,HIST 201.H,Atatürk İlkeleri ve İnkılap Tarihi I,LEMAN MERAL ÜNAL,Pazartesi 14:40 - 16:30
+HIST 201,HIST 201.I,Atatürk İlkeleri ve İnkılap Tarihi I,BAŞAK AKGÜL KOVANKAYA,Perşembe 14:40 - 16:30
+HIST 201,HIST 201.J,Atatürk İlkeleri ve İnkılap Tarihi I,ALPKAN BİRELMA,Cuma 14:40 - 16:30
+HIST 201,HIST 201.K,Atatürk İlkeleri ve İnkılap Tarihi I,ÖZLEM DİLBER,Salı 16:40 - 18:30
+HIST 201,HIST 201.L,Atatürk İlkeleri ve İnkılap Tarihi I,CANAN BALKAN,Salı 16:40 - 18:30
+HIST 201,HIST 201.M,Atatürk İlkeleri ve İnkılap Tarihi I,ALPKAN BİRELMA,Perşembe 14:40 - 16:30
+HIST 202,HIST 202.A,Atatürk İlkeleri ve İnkılap Tarihi II,GÜLDENİZ KIBRIS,Salı 16:40 - 18:30
+HIST 202,HIST 202.B,Atatürk İlkeleri ve İnkılap Tarihi II,BAŞAK AKGÜL KOVANKAYA,Cuma 16:40 - 18:30
+HIST 202,HIST 202.C,Atatürk İlkeleri ve İnkılap Tarihi II,LEMAN MERAL ÜNAL,Pazartesi 16:40 - 18:30
+HIST 202,HIST 202.D,Atatürk İlkeleri ve İnkılap Tarihi II,CANAN BALKAN,Çarşamba 16:40 - 18:30
+HIST 202,HIST 202.E,Atatürk İlkeleri ve İnkılap Tarihi II,ALPKAN BİRELMA,Perşembe 16:40 - 18:30
+HIST 202,HIST 202.F,Atatürk İlkeleri ve İnkılap Tarihi II,BAŞAK AKGÜL KOVANKAYA,Cuma 14:40 - 16:30
+MATH 101,MATH 101.A,Sosyal Bilimler için Matematik I,JÜLİDE MİRAY ÖZKAN,Pazartesi 10:40 - 12:30 / Çarşamba 14:40 - 15:30
+MATH 101,MATH 101.B,Sosyal Bilimler için Matematik I,JÜLİDE MİRAY ÖZKAN,Pazartesi 14:40 - 16:30 / Çarşamba 10:40 - 11:30
+MATH 101,MATH 101.C,Sosyal Bilimler için Matematik I,AYÇA ÇEŞMELİOĞLU GÜL,Pazartesi 10:40 - 12:30 / Çarşamba 14:40 - 15:30
+MATH 101,MATH 101.D,Sosyal Bilimler için Matematik I,AYÇA ÇEŞMELİOĞLU GÜL,Pazartesi 14:40 - 16:30 / Çarşamba 10:40 - 11:30
+MATH 101,MATH 101.E,Sosyal Bilimler için Matematik I,BURÇİN GÜNEŞ,Pazartesi 10:40 - 12:30 / Çarşamba 14:40 - 15:30
+MATH 101,MATH 101.F,Sosyal Bilimler için Matematik I,BURÇİN GÜNEŞ,Pazartesi 14:40 - 16:30 / Çarşamba 10:40 - 11:30
+MATH 101,MATH 101.G,Sosyal Bilimler için Matematik I,HANDAN BORLUK,Pazartesi 10:40 - 12:30 / Çarşamba 14:40 - 15:30
+MATH 101,MATH 101.H,Sosyal Bilimler için Matematik I,HANDAN BORLUK,Pazartesi 14:40 - 16:30 / Çarşamba 10:40 - 11:30
+MATH 102,MATH 102.A,Sosyal Bilimler için Matematik II,CÜNEYT FERAHLAR,Pazartesi 14:40 - 16:30 / Çarşamba 10:40 - 11:30
+MATH 102,MATH 102.B,Sosyal Bilimler için Matematik II,CÜNEYT FERAHLAR,Pazartesi 10:40 - 12:30 / Çarşamba 14:40 - 15:30
+MATH 201,MATH 201.A,Sosyal Bilimler için Olasılık,SEÇKİN ÖZBİLEN,Çarşamba 15:40 - 18:30
+MATH 201,MATH 201.B,Sosyal Bilimler için Olasılık,SEÇKİN ÖZBİLEN,Salı 08:40 - 11:30
+MATH 201,MATH 201.C,Sosyal Bilimler için Olasılık,ZEHRA ZEYNEP ŞAHİNBAŞOĞLU,Çarşamba 15:40 - 18:30
+MATH 202,MATH 202.A,Sosyal Bilimler için İstatistik,SEÇKİN ÖZBİLEN,Salı 14:40 - 17:30
+MATH 202,MATH 202.B,Sosyal Bilimler için İstatistik,SEÇKİN ÖZBİLEN,Pazartesi 13:40 - 16:30
+MGMT 202,MGMT 202.A,Örgütler,CEYDA MADEN EYİUSTA,Çarşamba 09:40 - 12:30
+MGMT 202,MGMT 202.B,Örgütler,AYBİKE MERGEN,Cuma 09:40 - 12:30
+MGMT 202,MGMT 202.C,Örgütler,NERİMAN GÖKÇAY,Çarşamba 08:40 - 11:30 / Çarşamba 08:40 - 11:30
+MGMT 401,MGMT 401.A,Teknoloji ve İnovasyon Yönetimi,ERIK DEN HARTIGH,Cuma 14:40 - 17:30
+MGMT 402,MGMT 402.A,Strateji,ALPTEGİN ALBAYRAKTAROĞLU,Cuma 09:40 - 12:30
+MIS 100,MIS 100.A,Bilişim Teknolojilerine Giriş,YAVUZ SELİM HİNDİSTAN,Cuma 16:40 - 18:30
+MIS 103,MIS 103.A,Bilgisayar Programlamaya Giriş,YAVUZ SELİM HİNDİSTAN,Perşembe 10:40 - 13:30
+MIS 203,MIS 203.A,Veritabanı Yönetimi,PELİN ATAHAN DEMİRCİLER,Perşembe 13:40 - 16:30
+MIS 301,MIS 301.A,Kurumsal Bilgi Sistemleri,ORÇUN TEMİZKAN,Çarşamba 12:40 - 15:30
+MIS 309,MIS 309.A,Sistem Analizi ve Tasarımı,MELTEM ÖZTURAN,Salı 08:40 - 11:30
+MKTG 201,MKTG 201.A,Pazarlama,ZEYNEP MÜGE GÜZEL,Pazartesi 12:40 - 15:30
+MKTG 201,MKTG 201.B,Pazarlama,CEREN HAYRAN ŞANLI,Pazartesi 12:40 - 15:30
+MKTG 201,MKTG 201.C,Pazarlama,CEREN HAYRAN ŞANLI,Çarşamba 08:40 - 11:30
+MKTG 201,MKTG 201.D,Pazarlama,BİGE SAATÇİOĞLU,Salı 11:40 - 14:30
+MKTG 201,MKTG 201.E,Pazarlama,CEREN HAYRAN ŞANLI,Çarşamba 11:40 - 14:30
+OPER 202,OPER 202.A,Operasyon Yönetimi,EYLEM KOCA,Salı 08:40 - 11:30
+OPER 202,OPER 202.B,Operasyon Yönetimi,EYLEM KOCA,Perşembe 08:40 - 11:30
+OPER 202,OPER 202.C,Operasyon Yönetimi,EYLEM KOCA,Çarşamba 15:40 - 18:30
+PSY 100,PSY 100.A,Genel Psikoloji,GÜL CANAN ERGİN,Cuma 15:40 - 18:30
+SEC 101,SEC 101.A,Üniversite Yaşamına Giriş,TUFAN ADIGÜZEL,
+SEC 101,SEC 101.B,Üniversite Yaşamına Giriş,TUFAN ADIGÜZEL,
+SEC 101,SEC 101.C,Üniversite Yaşamına Giriş,TUFAN ADIGÜZEL,
+SEC 101,SEC 101.D,Üniversite Yaşamına Giriş,TUFAN ADIGÜZEL,
+SEC 201,SEC 201.A,Sektörlere Giriş,DUDU YEŞİM İNCE,Pazartesi 20:40 - 21:30
+SEC 202,SEC 202.A,Yetkinlik Yönetimi,MERİÇ BIÇAKCIOĞLU,Pazartesi 18:40 - 19:30
+SEC 302,SEC 302.A,Sektörel Çözümler: Yerel Uzmanlık,MERİÇ BIÇAKCIOĞLU,Perşembe 08:40 - 10:30
+SEC 302,SEC 302.B,Sektörel Çözümler: Yerel Uzmanlık,MERİÇ BIÇAKCIOĞLU,Perşembe 16:40 - 18:30
+SEC 401,SEC 401.A,İşletmede Sektörel Uygulamalar,PELİN ATAHAN DEMİRCİLER,Perşembe 18:40 - 21:30
+SEC 401,SEC 401.F,İşletmede Sektörel Uygulamalar,PELİN ATAHAN DEMİRCİLER,Salı 15:40 - 18:30
+TLL 101,TLL 101.A,Türk Dili ve Edebiyatı I,ŞENAY ÇINAR,Pazartesi 12:40 - 14:30
+TLL 101,TLL 101.AA,Türk Dili ve Edebiyatı I,ÇİMEN GÜNAY ERKOL,Pazartesi 14:40 - 16:30
+TLL 101,TLL 101.AB,Türk Dili ve Edebiyatı I,ŞENAY ÇINAR,Çarşamba 08:40 - 10:30
+TLL 101,TLL 101.AC,Türk Dili ve Edebiyatı I,ŞENAY ÇINAR,Perşembe 13:40 - 15:30
+TLL 101,TLL 101.AD,Türk Dili ve Edebiyatı I,EZGİ HAMZAÇEBİ,Çarşamba 12:40 - 14:30
+TLL 101,TLL 101.AE,Türk Dili ve Edebiyatı I,EZGİ HAMZAÇEBİ,Çarşamba 16:40 - 18:30
+TLL 101,TLL 101.B,Türk Dili ve Edebiyatı I,SENEM TİMUROĞLU,Pazartesi 16:40 - 18:30
+TLL 101,TLL 101.C,Türk Dili ve Edebiyatı I,ŞENAY ÇINAR,Perşembe 10:40 - 12:30
+TLL 101,TLL 101.D,Türk Dili ve Edebiyatı I,ALİ SERDAR,Çarşamba 11:40 - 13:30
+TLL 101,TLL 101.E,Türk Dili ve Edebiyatı I,ŞERİFE SEDA YÜCEKURT ÜNLÜ,Pazartesi 12:40 - 14:30
+TLL 101,TLL 101.F,Türk Dili ve Edebiyatı I,EGEM ATİK,Pazartesi 16:40 - 18:30
+TLL 101,TLL 101.G,Türk Dili ve Edebiyatı I,EGEM ATİK,Perşembe 10:40 - 12:30
+TLL 101,TLL 101.H,Türk Dili ve Edebiyatı I,FATMA DAMAK,Çarşamba 11:40 - 13:30
+TLL 101,TLL 101.I,Türk Dili ve Edebiyatı I,ŞERİFE SEDA YÜCEKURT ÜNLÜ,Perşembe 12:40 - 14:30
+TLL 101,TLL 101.J,Türk Dili ve Edebiyatı I,ŞERİFE SEDA YÜCEKURT ÜNLÜ,Pazartesi 16:40 - 18:30
+TLL 101,TLL 101.K,Türk Dili ve Edebiyatı I,FATMA DAMAK,Çarşamba 08:40 - 10:30
+TLL 101,TLL 101.L,Türk Dili ve Edebiyatı I,ŞERİFE SEDA YÜCEKURT ÜNLÜ,Çarşamba 12:40 - 14:30
+TLL 101,TLL 101.M,Türk Dili ve Edebiyatı I,MURAT NARCI,Perşembe 08:40 - 10:30
+TLL 101,TLL 101.N,Türk Dili ve Edebiyatı I,MURAT NARCI,Perşembe 11:40 - 13:30
+TLL 101,TLL 101.O,Türk Dili ve Edebiyatı I,MURAT NARCI,Pazartesi 12:40 - 14:30
+TLL 101,TLL 101.P,Türk Dili ve Edebiyatı I,MURAT NARCI,Çarşamba 10:40 - 12:30
+TLL 101,TLL 101.Q,Türk Dili ve Edebiyatı I,GÜNEŞ SEZEN,Perşembe 08:40 - 10:30
+TLL 101,TLL 101.R,Türk Dili ve Edebiyatı I,GÜNEŞ SEZEN,Perşembe 11:40 - 13:30
+TLL 101,TLL 101.S,Türk Dili ve Edebiyatı I,SENEM TİMUROĞLU,Pazartesi 12:40 - 14:30
+TLL 101,TLL 101.T,Türk Dili ve Edebiyatı I,GÜNEŞ SEZEN,Çarşamba 10:40 - 12:30
+TLL 101,TLL 101.U,Türk Dili ve Edebiyatı I,FATMA DAMAK,Perşembe 08:40 - 10:30
+TLL 101,TLL 101.V,Türk Dili ve Edebiyatı I,FATMA DAMAK,Perşembe 11:40 - 13:30
+TLL 101,TLL 101.W,Türk Dili ve Edebiyatı I,EGEM ATİK,Pazartesi 12:40 - 14:30
+TLL 101,TLL 101.X,Türk Dili ve Edebiyatı I,SENEM TİMUROĞLU,Salı 11:40 - 13:30
+TLL 101,TLL 101.Y,Türk Dili ve Edebiyatı I,ŞENAY ÇINAR,Pazartesi 16:40 - 18:30
+TLL 101,TLL 101.Z,Türk Dili ve Edebiyatı I,ÇİMEN GÜNAY ERKOL,Salı 08:40 - 10:30
+TLL 102,TLL 102.A,Türk Dili ve Edebiyatı II,GÜNEŞ SEZEN,Salı 16:40 - 18:30
+TLL 102,TLL 102.B,Türk Dili ve Edebiyatı II,YAĞMUR YILDIRIMAY,Cuma 16:40 - 18:30
+TLL 102,TLL 102.C,Türk Dili ve Edebiyatı II,EZGİ HAMZAÇEBİ,Cuma 10:40 - 12:30
+TLL 102,TLL 102.D,Türk Dili ve Edebiyatı II,YAĞMUR YILDIRIMAY,Salı 12:40 - 14:30
+TLL 102,TLL 102.E,Türk Dili ve Edebiyatı II,EZGİ HAMZAÇEBİ,Cuma 14:40 - 16:30
+TLL 102,TLL 102.F,Türk Dili ve Edebiyatı II,EZGİ HAMZAÇEBİ,Cuma 08:40 - 10:30
+TLL 102,TLL 102.G,Türk Dili ve Edebiyatı II,ALİ SERDAR,Cuma 16:40 - 18:30
+TLL 102,TLL 102.H,Türk Dili ve Edebiyatı II,YAĞMUR YILDIRIMAY,Salı 16:40 - 18:30
+TLL 102,TLL 102.I,Türk Dili ve Edebiyatı II,YAĞMUR YILDIRIMAY,Çarşamba 16:40 - 18:30
+TLL 102,TLL 102.J,Türk Dili ve Edebiyatı II,FATMA DAMAK,Cuma 16:40 - 18:30
+TLL 102,TLL 102.K,Türk Dili ve Edebiyatı II,FATMA DAMAK,Cuma 14:40 - 16:30
+TLL 102,TLL 102.L,Türk Dili ve Edebiyatı II,MURAT NARCI,Pazartesi 16:40 - 18:30
+TLL 102,TLL 102.M,Türk Dili ve Edebiyatı II,GÜNEŞ SEZEN,Çarşamba 14:40 - 16:30
+TLL 102,TLL 102.N,Türk Dili ve Edebiyatı II,ALİ SERDAR,Çarşamba 08:40 - 10:30
+TLL 102,TLL 102.O,Türk Dili ve Edebiyatı II,ŞERİFE SEDA YÜCEKURT ÜNLÜ,Perşembe 10:40 - 12:30
+TLL 102,TLL 102.P,Türk Dili ve Edebiyatı II,YAĞMUR YILDIRIMAY,Pazartesi 14:40 - 16:30
+BUS 311,BUS 311.A,Staj I,Staj I,
+BUS 312,BUS 312.A,Staj II,Staj II,
+ACCT 301,ACCT 301.A,Yönetim Muhasebesi,ALİNA TARAN,Çarşamba 12:40 - 15:30
+ACCT 301,ACCT 301.B,Yönetim Muhasebesi,ALİNA TARAN,Salı 15:40 - 18:30
+BUS 201,BUS 201.A,İş Kararı Modelleme,NAGİHAN ÇÖMEZ DOLGAN,Salı 11:40 - 14:30
+BUS 201,BUS 201.B,İş Kararı Modelleme,BO WEI,Salı 11:40 - 14:30
+CS 440,CS 440.A,Finansta Makine Öğrenmesi,EMRE SEFER,Pazartesi 09:40 - 12:30
+MIS 305,MIS 305.A,İşletmelerde Dijital Dönüşüm,MELİKE NUR FINDIKOĞLU,Pazartesi 15:40 - 18:30
+MIS 403,MIS 403.A,Bağımsız Araştırma - MIS,CEYDA MADEN EYİUSTA,
+MKTG 311,MKTG 311.A,Pazarlama Araştırması,ZEYNEP MÜGE GÜZEL,Cuma 09:40 - 12:30
+OPER 312,OPER 312.A,Tedarik Zinciri Yönetimi,EYLEM KOCA,Çarşamba 08:40 - 11:30
+OPER 313,OPER 313.A,Gelir Yönetimi,BAHRİYE CESARET,Pazartesi 08:40 - 11:30
+PSY 305,PSY 305.A,İş ve Örgüt Psikolojisi,HAYRİYE CANAN SÜMER,Perşembe 15:40 - 18:30
+ACCT 301,ACCT 301.A,Yönetim Muhasebesi,ALİNA TARAN,Çarşamba 12:40 - 15:30
+ACCT 301,ACCT 301.B,Yönetim Muhasebesi,ALİNA TARAN,Salı 15:40 - 18:30
+AI 202,AI 202.A,Modelleme,TAYLAN AKDOĞAN,Salı 08:40 - 10:30 / Cuma 08:40 - 10:30
+ANTH 303,ANTH 303.A,Toplumsal Cinsiyet,BERNA ARSLAN,Perşembe 11:40 - 14:30
+ANTH 319,ANTH 319.A,Afetler ve Dayanıklı Kentler,MURAT GÜNEY,Perşembe 11:40 - 14:30
+ARB 101,ARB 101.A,Arapça I,SALMA JEHAD AWAD ALAMASSI,Çarşamba 10:40 - 12:30 / Cuma 10:40 - 12:30
+ARCH 473,ARCH 473.A,İleri Maket Yapım Teknikleri ve Malzemeleri,FIRAT ALİ FIRAT,Pazartesi 14:40 - 16:30 / Pazartesi 14:40 - 16:30
+ART 101,ART 101.A,Resim I,MARTIN HARRISON,Salı 08:40 - 11:30
+ART 101,ART 101.B,Resim I,MARTIN HARRISON,Perşembe 08:40 - 11:30
+ART 102,ART 102.A,Resim II,MARTIN HARRISON,Salı 15:40 - 18:30
+ART 103,ART 103.A,Karakalem,MARTIN HARRISON,Perşembe 15:40 - 18:30
+ART 110,ART 110.A,Ebru Sanatı,EDA SAİME ÖZBEKKANGAY ÇAKIR,Cuma 15:40 - 17:30
+ART 111,ART 111.A,Yazmacılık Sanatı,MÜZEYYEN TÜYSÜZ PULAT,Cuma 10:40 - 12:30
+AVM 101,AVM 101.A,Hava Taşımacılığı,CEM ERSÖZ,Salı 13:40 - 16:30
+AVM 101,AVM 101.B,Hava Taşımacılığı,CEM ERSÖZ,Cuma 09:40 - 12:30
+AVM 315,AVM 315.A,Havacılıkta Çeşitlilik,SENA KILIÇ,Çarşamba 09:40 - 11:30
+BUS 201,BUS 201.A,İş Kararı Modelleme,NAGİHAN ÇÖMEZ DOLGAN,Salı 11:40 - 14:30
+BUS 201,BUS 201.B,İş Kararı Modelleme,BO WEI,Salı 11:40 - 14:30
+BUS 301,BUS 301.A,İş Analitiği,AYŞE ÇETİNEL,Perşembe 11:40 - 13:30 / Cuma 14:40 - 16:30
+BUS 302,BUS 302.A,İşletme Hukuku,MÜJDEM AKSOY ÇEVİK,Perşembe 13:40 - 16:30
+CE 302,CE 302.A,Zemin Mekaniği,MUSTAFA ATİLLA ANSAL,Pazartesi 12:40 - 14:30 / Salı 13:40 - 15:30
+CE 310,CE 310.A,Ulaştırma Mühendisliği,BEKİR OĞUZ BARTIN,Perşembe 14:40 - 17:30
+CE 391,CE 391.A,Beton Malzemeleri,ZEYNEP BAŞARAN BUNDUR,Çarşamba 15:40 - 18:30
+CE 424,CE 424.A,Geoteknik Yapılar,SAFİYE FEYZA ÇİNİCİOĞLU,Çarşamba 14:40 - 17:30
+CHEM 111,CHEM 111.A,Kimya,İLKNUR ERUÇAR FINDIKÇI,Pazartesi 12:40 - 14:30 / Çarşamba 12:40 - 14:30
+CHN 101,CHN 101.A,Çince I,LALE GÜNER,Pazartesi 08:40 - 10:30 / Cuma 08:40 - 10:30
+CHN 102,CHN 102.A,Çince II,LALE GÜNER,Pazartesi 10:40 - 12:30 / Çarşamba 08:40 - 10:30
+CHN 201,CHN 201.A,Çince III,LALE GÜNER,Pazartesi 16:40 - 18:30 / Çarşamba 12:40 - 14:30
+CHN 202,CHN 202.A,Çince IV,LALE GÜNER,Pazartesi 13:40 - 15:30 / Perşembe 11:40 - 13:30
+COD 303,COD 303.A,Yaratıcılık ve İnovasyon,ONUR YURTSEVER,Çarşamba 09:40 - 12:30 / Çarşamba 09:40 - 12:30
+COD 316,COD 316.A,Anlatı Yapıları,METİN ÇAVUŞ,Cuma 09:40 - 12:30
+COD 319,COD 319.A,Mekansal İletişim,SİMGE ORHUN,Salı 09:40 - 12:30
+COD 322,COD 322.A,Tasarım İçin Rol Oynama,YASEMİN YILDIRIM,Perşembe 13:40 - 16:30 / Perşembe 13:40 - 16:30
+COD 323,COD 323.A,Ses Tasarımı,SALİH ALP TUĞAN,Salı 13:40 - 16:30
+COD 403,COD 403.A,Etkileşimli Pazarlama,SİNAN GÜNAL,Cuma 16:40 - 19:30
+COD 417,COD 417.A,Oyun Tasarımı,VOLKAN DAVUT MENGİ,Cuma 09:40 - 12:30
+COD 422,COD 422.A,Sahne Tasarımı,YASEMİN YILDIRIM,Çarşamba 09:40 - 12:30 / Çarşamba 09:40 - 12:30
+CS 104,CS 104.A,Programlamaya Giriş,ZEYNEP İLKNUR KARADENİZ EROL,Pazartesi 08:40 - 10:30 / Pazartesi 08:40 - 10:30
+CS 201,CS 201.A,Veri Yapıları ve Algoritmalar,OLCAY TANER YILDIZ,Pazartesi 16:40 - 18:30
+CS 201,CS 201.B,Veri Yapıları ve Algoritmalar,EMRE SEFER,Pazartesi 12:40 - 14:30
+CS 202,CS 202.A,Veritabanı Yönetim Sistemleri,HÜSEYİN ULUSOY,Çarşamba 12:40 - 16:30
+CS 240,CS 240.A,Bilgisayar Mimarisi,İSMAİL AKTÜRK,Salı 13:40 - 16:30
+CS 320,CS 320.A,Yazılım Mühendisliği,HASAN SÖZER,Pazartesi 08:40 - 11:30
+CS 321,CS 321.A,Programlama Paradigmaları,MUSTAFA FURKAN KIRAÇ,Perşembe 08:40 - 11:30
+CS 394,CS 394.A,Android OS ve Mobil Uygulamalar (Sertifika Seçmeli),MERVE DOĞAN,Salı 11:40 - 14:30 / Salı 11:40 - 14:30
+CS 410,CS 410.A,Otomat Kuramı ve Biçimsel Diller,OLCAY TANER YILDIZ,Pazartesi 12:40 - 14:30 / Salı 14:40 - 16:30
+CS 434,CS 434.A,Yazılım Tasarım Örüntüleri,EMRE KAPLAN,Cuma 14:40 - 17:30
+CS 440,CS 440.A,Finansta Makine Öğrenmesi,EMRE SEFER,Pazartesi 09:40 - 12:30
+CS 447,CS 447.A,Bilgisayar Ağları,MEHMET REHA CİVANLAR,Perşembe 19:40 - 21:30 / Çarşamba 19:40 - 20:30
+CS 450,CS 450.A,Dağıtık Sistemler ve Bulut Bilişim,İSMAİL ARI,Çarşamba 15:40 - 18:30
+CS 451,CS 451.A,Yapay Zekaya Giriş,REYHAN AYDOĞAN,Pazartesi 09:40 - 11:30 / Salı 10:40 - 11:30
+CS 452,CS 452.A,Python ile Veri Bilimi,OLCAY TANER YILDIZ,Salı 08:40 - 11:30
+CS 454,CS 454.A,Yapay Sinir Ağları ve Otomatik Öğrenmeye Giriş,AHMET İBRAHİM ETHEM ALPAYDIN,Cuma 08:40 - 11:30
+ECON 102,ECON 102.A,Makroekonomi,GÖNÜL ŞENGÜL,Perşembe 08:40 - 11:30
+ECON 102,ECON 102.B,Makroekonomi,GÖNÜL ŞENGÜL,Perşembe 13:40 - 16:30
+ECON 102,ECON 102.C,Makroekonomi,ONURSAL BAĞIRGAN,Perşembe 13:40 - 16:30
+ECON 201,ECON 201.A,İleri Mikroekonomi,BEGÜM GÜNEY,Çarşamba 12:40 - 15:30
+ECON 201,ECON 201.B,İleri Mikroekonomi,BEGÜM GÜNEY,Çarşamba 08:40 - 11:30
+ECON 202,ECON 202.A,İleri Makroekonomi,ŞERİFE NURAY DURAN,Salı 11:40 - 14:30 / Perşembe 14:40 - 15:30
+ECON 301,ECON 301.A,Ekonometri I,UMUT AKOVALI,Pazartesi 15:40 - 18:30 / Çarşamba 11:40 - 12:30
+ECON 302,ECON 302.A,Ekonometri II,GÖZDE ÇÖREKÇİOĞLU İSHAKOĞLU,Pazartesi 15:40 - 18:30 / Cuma 08:40 - 09:30
+ECON 304,ECON 304.A,Endüstriyel Organizasyon,BAŞAK ALTAN ÖZENER,Pazartesi 11:40 - 14:30
+ECON 307,ECON 307.A,Oyun Kuramı,ÖZGÜN EKİCİ,Salı 08:40 - 11:30
+ECON 309,ECON 309.A,Para ve Bankacılık,UMUT AKOVALI,Salı 11:40 - 14:30
+ECON 402,ECON 402.A,Türkiye Ekonomisi,GÖNÜL ŞENGÜL,Çarşamba 12:40 - 15:30
+ECON 403,ECON 403.A,Bağımsız Araştırma - ECON,CEYDA MADEN EYİUSTA,
+ECON 407,ECON 407.A,Çevre Ekonomisi ve Politikası,ARSENIY SAMSONOV,Pazartesi 09:40 - 12:30
+EE 201,EE 201.A,Sinyaller ve Sistemler,EVŞEN YANMAZ ADAM,Perşembe 08:40 - 11:30
+EE 202,EE 202.A,Devre Analizi,UMUT BAŞARAN,Pazartesi 10:40 - 12:30 / Salı 11:40 - 13:30
+EE 203,EE 203.A,Sayısal Sistemler,İLKER HAMZAOĞLU,Salı 08:40 - 11:30
+EE 301,EE 301.A,Elektronik I,KADİR DURAK,Pazartesi 15:40 - 18:30
+EE 341,EE 341.A,Haberleşme Sistemlerinin Temelleri,EVŞEN YANMAZ ADAM,Çarşamba 11:40 - 14:30
+EE 350,EE 350.A,Elektronik II,UMUT BAŞARAN,Pazartesi 15:40 - 18:30
+EE 442,EE 442.A,Sayısal Haberleşmeye Giriş,MOHAMMED ELAMASSIE,Salı 12:40 - 15:30
+EE 462,EE 462.A,HDL Tabanlı Sayısal Sistemler Tasarımı,İLKER HAMZAOĞLU,Pazartesi 08:40 - 11:30
+EE 483,EE 483.A,Mikrodalga Mühendisliği,AHMED HALİD AKGİRAY,Cuma 15:40 - 18:30
+ENG 303,ENG 303.A,Teknik İletişim,ELİF KANDEMİR,Çarşamba 11:40 - 14:30
+ENG 303,ENG 303.B,Teknik İletişim,ELİF KANDEMİR,Cuma 08:40 - 11:30
+ENG 303,ENG 303.C,Teknik İletişim,ELİF KANDEMİR,Salı 13:40 - 16:30
+ENG 303,ENG 303.D,Teknik İletişim,ELİF KANDEMİR,Pazartesi 12:40 - 15:30
+ENG 303,ENG 303.E,Teknik İletişim,MERVE ELBİRLİK TÜLEK,Çarşamba 11:40 - 14:30
+ENG 303,ENG 303.F,Teknik İletişim,MERVE ELBİRLİK TÜLEK,Cuma 08:40 - 11:30
+ENG 303,ENG 303.G,Teknik İletişim,MERVE ELBİRLİK TÜLEK,Perşembe 11:40 - 14:30
+ENG 303,ENG 303.H,Teknik İletişim,MERVE ELBİRLİK TÜLEK,Perşembe 15:40 - 18:30
+ENG 303,ENG 303.I,Teknik İletişim,SELEN YILDIZ,Cuma 08:40 - 11:30
+ENG 303,ENG 303.J,Teknik İletişim,SELEN YILDIZ,Salı 13:40 - 16:30
+ENG 303,ENG 303.K,Teknik İletişim,SELEN YILDIZ,Pazartesi 12:40 - 15:30
+ENG 303,ENG 303.L,Teknik İletişim,SELEN YILDIZ,Perşembe 15:40 - 18:30
+ENTR 303,ENTR 303.A,Yaratıcılık ve Fikir Geliştirme,MERİÇ BIÇAKCIOĞLU,Çarşamba 12:40 - 15:30
+ENTR 305,ENTR 305.A,Girişimci Pazarlama,XIAOHAN WEN,Perşembe 10:40 - 13:30
+ENTR 308,ENTR 308.A,Girişimci Finans,ELİF AKBEN SELÇUK,Pazartesi 08:40 - 11:30
+ENTR 310,ENTR 310.A,Yeni Girişimlerde Liderlik ve Yönetim,BOCHRA IDRIS,Pazartesi 12:40 - 15:30
+ENTR 403,ENTR 403.A,Sosyal Girişimcilik ve Yenilikçilik,MERİÇ BIÇAKCIOĞLU,Çarşamba 08:40 - 11:30
+ENTR 404,ENTR 404.A,Bitirme Projesi,AHMET MURAT FİŞ,Salı 08:40 - 11:30
+ENTR 405,ENTR 405.A,Bağımsız Araştırma - ENTR,CEYDA MADEN EYİUSTA,
+ENTR 407,ENTR 407.A,Aile Şirketlerinde Girişimci Yönetim,SEVGİ PEREK,Perşembe 10:40 - 13:30
+ENTR 408,ENTR 408.A,Kurum İçi Girişimcilik,BOCHRA IDRIS,Perşembe 13:40 - 16:30
+FIN 204,FIN 204.A,Finansal Tablolar Analizi,MEHMET ERKAN SAVRAN,Pazartesi 10:40 - 13:30
+FIN 301,FIN 301.A,Yatırımlar,EMRAH AHİ,Çarşamba 12:40 - 15:30
+FIN 302,FIN 302.A,Kurumsal Finans,ÖZLEM AKIN,Cuma 09:40 - 12:30
+FIN 401,FIN 401.A,Uluslararası Finans,SATI MEHMET ÖZSOY,Çarşamba 08:40 - 11:30
+FIN 403,FIN 403.A,Bağımsız Araştırma - FIN,CEYDA MADEN EYİUSTA,
+FIN 419,FIN 419.A,Şirket Değerleme,ZÜMRÜT CAN AMBARCI,Cuma 17:40 - 20:30
+FRE 101,FRE 101.A,Fransızca I,OLGA SOKOLOVA,Pazartesi 15:40 - 17:30 / Cuma 14:40 - 16:30
+FRE 101,FRE 101.B,Fransızca I,SALMA JEHAD AWAD ALAMASSI,Pazartesi 08:40 - 10:30 / Cuma 08:40 - 10:30
+FRE 102,FRE 102.A,Fransızca II,OLGA SOKOLOVA,Pazartesi 11:40 - 13:30 / Perşembe 11:40 - 13:30
+FRE 102,FRE 102.B,Fransızca II,SALMA JEHAD AWAD ALAMASSI,Pazartesi 10:40 - 12:30 / Perşembe 11:40 - 13:30
+FRE 201,FRE 201.A,Fransızca III,OLGA SOKOLOVA,Cuma 16:40 - 18:30 / Pazartesi 08:40 - 10:30
+FRE 202,FRE 202.A,Fransızca IV,OLGA SOKOLOVA,Perşembe 14:40 - 16:30 / Salı 12:40 - 14:30
+GARM 224,GARM 224.A,Gıda ve Sürdürülebilirlik,CANDAN TÜRKKAN,Pazartesi 09:40 - 12:30
+GARM 484,GARM 484.A,Türkiye Tarımının Ekonomi Politiği,CANDAN TÜRKKAN,Salı 11:40 - 14:30
+GER 101,GER 101.A,Almanca I,MERVE ÖZKAN,Salı 14:40 - 16:30 / Perşembe 12:40 - 14:30
+GER 101,GER 101.B,Almanca I,GÜLAY BİRİNCİ,Salı 14:40 - 16:30 / Cuma 14:40 - 16:30
+GER 102,GER 102.A,Almanca II,GÜLAY BİRİNCİ,Çarşamba 15:40 - 17:30 / Pazartesi 08:40 - 10:30
+GER 102,GER 102.B,Almanca II,MERVE ÖZKAN,Pazartesi 11:40 - 13:30 / Cuma 14:40 - 16:30
+GER 201,GER 201.A,Almanca III,MERVE ÖZKAN,Pazartesi 16:40 - 18:30 / Cuma 10:40 - 12:30
+GER 201,GER 201.B,Almanca III,GÜLAY BİRİNCİ,Pazartesi 11:40 - 13:30 / Çarşamba 12:40 - 14:30
+GER 202,GER 202.A,Almanca IV,GÜLAY BİRİNCİ,Çarşamba 10:40 - 12:30 / Cuma 10:40 - 12:30
+GER 202,GER 202.B,Almanca IV,MERVE ÖZKAN,Salı 11:40 - 13:30 / Perşembe 09:40 - 11:30
+HIST 103,HIST 103.A,Dünya Tarihi I,FERAY COŞKUN,Perşembe 13:40 - 16:30
+HIST 103,HIST 103.B,Dünya Tarihi I,FERAY COŞKUN,Pazartesi 09:40 - 12:30
+HIST 104,HIST 104.A,Dünya Tarihi II,OYA İKLİL SELÇUK,Pazartesi 15:40 - 18:30
+HIST 104,HIST 104.B,Dünya Tarihi II,PELİN TIĞLAY,Salı 12:40 - 15:30
+HIST 303,HIST 303.A,Atatürk İlkeleri ve İnkılap Tarihi I (Yabancılar için),CANAN BALKAN,Salı 18:40 - 20:30
+HIST 303,HIST 303.B,Atatürk İlkeleri ve İnkılap Tarihi I (Yabancılar için),CANAN BALKAN,Çarşamba 18:40 - 20:30
+HIST 303,HIST 303.C,Atatürk İlkeleri ve İnkılap Tarihi I (Yabancılar için),GÜLDENİZ KIBRIS,Salı 18:40 - 20:30
+HIST 304,HIST 304.A,Atatürk İlkeleri ve İnkılap Tarihi II (Yabancılar için),GÜLDENİZ KIBRIS,Çarşamba 18:40 - 20:30
+HUM 319,HUM 319.A,Filmlerle Felsefe: Felsefeye Giriş,SİBEL OKTAR THOMAS,Perşembe 08:40 - 11:30
+HUM 322,HUM 322.A,Güvenli Spor ve Toplumsal Cinsiyet,GÜNEŞ VİTER,Perşembe 08:40 - 10:30
+HUM 353,HUM 353.A,Edebiyat ve Modernizm,ÇİMEN GÜNAY ERKOL,Perşembe 08:40 - 11:30
+IBUS 104,IBUS 104.A,Küresel Yöneticiliğe ilk Adım,NESİM AVİĞDOR,Pazartesi 09:40 - 12:30
+IBUS 204,IBUS 204.A,Uluslararası İşletme,İLAYDA NEMLİOĞLU ÖNCÜ,Salı 08:40 - 11:30
+IBUS 301,IBUS 301.A,İhracat ve İthalat Yönetimi,NESİM AVİĞDOR,Çarşamba 09:40 - 12:30
+IBUS 303,IBUS 303.A,Global Organizasyonlarda Farklılık ve Dahiliyet,EDA GÜZELDEMİR DEMİRAY,Pazartesi 15:40 - 18:30
+IBUS 305,IBUS 305.A,Uluslararası Lojistik ,ZEYNEP ATA,Cuma 08:40 - 11:30
+IBUS 306,IBUS 306.A,Çok Uluslu Şirketlerin Yönetimi,ARİF ORÇUN SÖYLEMEZ,Salı 08:40 - 11:30
+IBUS 307,IBUS 307.A,Uluslararası İşletme ve Ticaret Hukuku,MÜJDEM AKSOY ÇEVİK,Salı 11:40 - 14:30
+IBUS 402,IBUS 402.A,Küresel Stratejik Yönetim,MEHMET ERDEM GENÇ,Salı 12:40 - 15:30
+IBUS 404,IBUS 404.A,Küresel İşletme Entegrasyonu,MEHMET ERDEM GENÇ,Perşembe 13:40 - 16:30
+IBUS 405,IBUS 405.A,Bağımsız Araştırma - IBUS,CEYDA MADEN EYİUSTA,
+IBUS 406,IBUS 406.A,Küresel Rekabetçi Stratejisi ve Dinamikleri,NİLÜFER YAPICI,Salı 08:40 - 11:30
+IBUS 407,IBUS 407.A,Küresel Endüstrileri Anlamak,ARİF ORÇUN SÖYLEMEZ,Perşembe 10:40 - 13:30
+IBUS 411,IBUS 411.A,Doğrudan Dış Yatırım için Ülke Analizi,İLAYDA NEMLİOĞLU ÖNCÜ,Salı 15:40 - 18:30
+IE 201,IE 201.A,Yöneylem Araştırması I,MEHMET ÖNAL,Salı 08:40 - 11:30
+IE 246,IE 246.A,Yöneylem Araştırması için Programlama,İSMAİL BAŞOĞLU,Çarşamba 11:40 - 14:30
+IE 301,IE 301.A,Yöneylem Araştırması II,GÖKALP ERBEYOĞLU,Pazartesi 12:40 - 15:30
+IE 302,IE 302.A,Üretim Sistemleri Analizi,ÖMER ERHUN KUNDAKCIOĞLU,Salı 09:40 - 12:30
+IE 325,IE 325.A,Benzetişim Modellemesi ve Analizi,İSMAİL BAŞOĞLU,Perşembe 12:40 - 15:30
+IE 372,IE 372.A,Üretim Planlama ve Çizelgeleme,ZEHRA MELİS TEKSAN,Pazartesi 15:40 - 18:30
+IE 389,IE 389.A,Verimlilik Ölçümü ve Yönetimi,YASEMİN CLAİRE ERENSAL,Çarşamba 08:40 - 11:30
+IE 391,IE 391.A,Proje Yönetimi (Sertifika Seçmeli),GÜLCAN BERBER,Çarşamba 16:40 - 19:30
+IE 396,IE 396.A,Çevik Yazılım ve Ürün Geliştirme,CİHANGİR ERTABAN,Perşembe 17:40 - 20:30 / Perşembe 17:40 - 20:30
+IR 101,IR 101.A,Siyaset Bilimine Giriş,DENİZ SERT,Salı 09:40 - 12:30
+IR 203,IR 203.A,Karşılaştırmalı Siyasete Giriş,TÜLAY DENİZ ERKMEN,Pazartesi 12:40 - 15:30
+IR 205,IR 205.A,Uluslararası İlişkilere Giriş,DENİZ SERT,Perşembe 13:40 - 16:30
+IR 301,IR 301.A,Diplomasi Tarihi,BEHLÜL ÖZKAN,Salı 11:40 - 14:30
+IR 315,IR 315.A,Barış ve Çatışma Çalışmaları,ESRA DİLEK,Çarşamba 12:40 - 15:30
+IR 338,IR 338.A,Küresel Enerji Politikaları,ESRA DİLEK,Çarşamba 08:40 - 11:30
+IR 401,IR 401.A,Uluslararası Ekonomi Politikası,EBRU ERTUGAL ÖZVEREN,Pazartesi 09:40 - 12:30
+IR 417,IR 417.A,Kentler ve Savaş,SAMARJIT GHOSH,Salı 08:40 - 11:30
+IR 419,IR 419.A,Toplumsal Hareketler ve Protestolar ,TÜLAY DENİZ ERKMEN,Çarşamba 12:40 - 15:30
+IR 423,IR 423.A,Küresel Soğuk Savaş,BEHLÜL ÖZKAN,Perşembe 08:40 - 11:30
+IR 426,IR 426.A,Karşılaştırmalı Anayasa Hukuku,ABDULLAH ERDEM DEMİRTAŞ,Çarşamba 15:40 - 18:30
+IR 427,IR 427.A,Küresel Güney’de Hukuk ve Toplum,ABDULLAH ERDEM DEMİRTAŞ,Salı 15:40 - 18:30
+ITA 101,ITA 101.A,İtalyanca I,ARCO JANNUZZİ,Pazartesi 15:40 - 17:30 / Cuma 14:40 - 16:30
+ITA 101,ITA 101.B,İtalyanca I,IRENE CAMPARI,Pazartesi 08:40 - 10:30 / Cuma 08:40 - 10:30
+ITA 101,ITA 101.C,İtalyanca I,IRENE CAMPARI,Salı 08:40 - 10:30 / Perşembe 09:40 - 11:30
+ITA 101,ITA 101.D,İtalyanca I,ARCO JANNUZZİ,Perşembe 08:40 - 10:30 / Salı 14:40 - 16:30
+ITA 102,ITA 102.A,İtalyanca II,IRENE CAMPARI,Pazartesi 11:40 - 13:30 / Perşembe 11:40 - 13:30
+ITA 102,ITA 102.B,İtalyanca II,ARCO JANNUZZİ,Pazartesi 10:40 - 12:30 / Perşembe 11:40 - 13:30
+ITA 201,ITA 201.A,İtalyanca III,ARCO JANNUZZİ,Pazartesi 08:40 - 10:30 / Cuma 16:40 - 18:30
+ITA 202,ITA 202.A,İtalyanca IV,IRENE CAMPARI,Salı 12:40 - 14:30 / Perşembe 14:40 - 16:30
+LAW 136,LAW 136.A,İnsan Haklarına Giriş,TUĞRUL ÖZKARACALAR,Salı 12:40 - 14:30
+LAW 241,LAW 241.A,İslam Hukuku ve Modern Dünya,AYÇA KÜÇÜK,Çarşamba 08:40 - 10:30
+LAW 347,LAW 347.A,Avrupa Birliği Çevre Hukuku,ÖZLEM İNANÇ,Perşembe 08:40 - 10:30
+LAW 449,LAW 449.A,Yapay Zeka Hukuku ve Etik,ÖZLEM İNANÇ,Çarşamba 14:40 - 16:30
+MATH 103,MATH 103.A,Mühendislik için Yüksek Matematik I,CAN DEHA KARIKSIZ,Pazartesi 10:40 - 12:30 / Çarşamba 14:40 - 16:30
+MATH 103,MATH 103.B,Mühendislik için Yüksek Matematik I,CAN DEHA KARIKSIZ,Pazartesi 14:40 - 16:30 / Çarşamba 10:40 - 12:30
+MATH 103,MATH 103.C,Mühendislik için Yüksek Matematik I,MEHMET ÖZ,Pazartesi 10:40 - 12:30 / Çarşamba 14:40 - 16:30
+MATH 103,MATH 103.D,Mühendislik için Yüksek Matematik I,MEHMET ÖZ,Pazartesi 14:40 - 16:30 / Çarşamba 10:40 - 12:30
+MATH 104,MATH 104.A,Mühendislik için Yüksek Matematik II,SAADET ERBAY,Pazartesi 14:40 - 16:30 / Çarşamba 10:40 - 12:30
+MATH 104,MATH 104.B,Mühendislik için Yüksek Matematik II,SAADET ERBAY,Pazartesi 10:40 - 12:30 / Çarşamba 14:40 - 16:30
+MATH 112,MATH 112.A,Ayrık Matematik,SELÇUK DEMİR,Pazartesi 08:40 - 10:30 / Cuma 14:40 - 16:30
+MATH 112,MATH 112.B,Ayrık Matematik,SELÇUK DEMİR,Çarşamba 08:40 - 10:30 / Cuma 08:40 - 10:30
+MATH 211,MATH 211.A,Doğrusal Cebir,CÜNEYT FERAHLAR,Çarşamba 16:40 - 18:30 / Perşembe 14:40 - 16:30
+MATH 211,MATH 211.B,Doğrusal Cebir,CÜNEYT FERAHLAR,Pazartesi 16:40 - 18:30 / Perşembe 16:40 - 18:30
+MATH 211,MATH 211.C,Doğrusal Cebir,BURÇİN GÜNEŞ,Perşembe 08:40 - 10:30 / Cuma 09:40 - 11:30
+MATH 211,MATH 211.D,Doğrusal Cebir,BURÇİN GÜNEŞ,Pazartesi 08:40 - 10:30 / Çarşamba 08:40 - 10:30
+MATH 212,MATH 212.A,Diferansiyel Denklemler,BERKAY ANAHTARCI,Pazartesi 14:40 - 16:30 / Çarşamba 10:40 - 12:30
+MATH 212,MATH 212.B,Diferansiyel Denklemler,BERKAY ANAHTARCI,Pazartesi 10:40 - 12:30 / Çarşamba 14:40 - 16:30
+MATH 216,MATH 216.A,Uygulamalı İstatistik,DİLEK GÜNNEÇ DANIŞ,Salı 12:40 - 15:30
+ME 111,ME 111.A,Mühendislik Çizim ve Tasarımı,RAMAZAN ÜNAL,Cuma 14:40 - 17:30 / Cuma 14:40 - 17:30
+ME 202,ME 202.A,Termodinamik,MUSTAFA PINAR MENGÜÇ,Salı 10:40 - 12:30 / Perşembe 10:40 - 12:30
+ME 211,ME 211.A,Mühendislik Mekaniği: Statik,HANDE ÖZTÜRK KAYMAKSÜT,Salı 08:40 - 10:30 / Perşembe 08:40 - 10:30
+ME 212,ME 212.A,Katı Mekaniği,POLAT ŞENDUR,Salı 08:40 - 10:30 / Perşembe 08:40 - 10:30
+ME 301,ME 301.A,Deneysel Mühendislik,GÜNEY GÜVEN YAPICI,Salı 14:40 - 16:30
+ME 311,ME 311.A,Mühendislik Mekaniği: Dinamik,REGAİP BARKAN UĞURLU,Pazartesi 10:40 - 12:30 / Çarşamba 10:40 - 12:30
+ME 323,ME 323.A,Isı Transferi: İletim,MEHMED RAFET ÖZDEMİR,Pazartesi 08:40 - 10:30 / Çarşamba 08:40 - 10:30
+ME 334,ME 334.A,Makina Tasarımı,ÖZKAN BEBEK,Pazartesi 12:40 - 14:30 / Salı 11:40 - 13:30
+ME 418,ME 418.A,Hesaplamalı Akışkanlar Dinamiği,ALTUĞ MELİK BAŞOL,Pazartesi 16:40 - 18:30 / Salı 14:40 - 16:30 / Pazartesi 16:40 - 18:30
+ME 435,ME 435.A,Malzemelerin Fiziksel Özellikleri,HANDE ÖZTÜRK KAYMAKSÜT,Çarşamba 10:40 - 13:30
+MGMT 311,MGMT 311.A,Proje Yönetimi,ERIK DEN HARTIGH,Salı 10:40 - 13:30
+MGMT 314,MGMT 314.A,Örgütlerde Liderlik ve İnsan Yönetimi,AYBİKE MERGEN,Pazartesi 12:40 - 15:30
+MGMT 404,MGMT 404.A,Uluslararası Yönetim,NİLÜFER YAPICI,Çarşamba 12:40 - 15:30
+MGMT 405,MGMT 405.A,Bağımsız Araştırma - MGMT,CEYDA MADEN EYİUSTA,
+MGMT 406,MGMT 406.A,Uluslararası İnsan Kaynakları Yönetimi,RAHİLE BAHAR KAYSERİLİOĞLU,Çarşamba 15:40 - 18:30
+MIS 305,MIS 305.A,İşletmelerde Dijital Dönüşüm,MELİKE NUR FINDIKOĞLU,Pazartesi 15:40 - 18:30
+MIS 403,MIS 403.A,Bağımsız Araştırma - MIS,CEYDA MADEN EYİUSTA,
+MKTG 311,MKTG 311.A,Pazarlama Araştırması,ZEYNEP MÜGE GÜZEL,Cuma 09:40 - 12:30
+MKTG 313,MKTG 313.A,Pazarlama Stratejileri,VOLKAN YENİARAS,Cuma 09:40 - 12:30
+MKTG 314,MKTG 314.A,Tüketici Davranışları,BİGE SAATÇİOĞLU,Pazartesi 11:40 - 14:30
+MKTG 315,MKTG 315.A,Uluslararası Pazarlama,XIAOHAN WEN,Pazartesi 09:40 - 12:30
+MKTG 322,MKTG 322.A,Marka Yönetimi,KIVILCIM DÖĞERLİOĞLU DEMİR,Pazartesi 12:40 - 15:30
+MKTG 403,MKTG 403.A,Bağımsız Araştırma - MKTG,CEYDA MADEN EYİUSTA,
+MKTG 416,MKTG 416.A,Kişisel Satış ve Satış Yönetimi,VOLKAN YENİARAS,Salı 12:40 - 15:30
+MUSIC 103,MUSIC 103.A,Dünya Müzikleri,KAMİL ERDEM,Salı 15:40 - 18:30
+OPER 312,OPER 312.A,Tedarik Zinciri Yönetimi,EYLEM KOCA,Çarşamba 08:40 - 11:30
+OPER 313,OPER 313.A,Gelir Yönetimi,BAHRİYE CESARET,Pazartesi 08:40 - 11:30
+OPER 318,OPER 318.A,Perakende Operasyonları,BAHRİYE CESARET,Pazartesi 12:40 - 15:30
+OPER 403,OPER 403.A,Bağımsız Araştırma - OPER,CEYDA MADEN EYİUSTA,
+PE 101,PE 101.A,Tenis,BARKIN YALÇINKALE,Salı 15:40 - 17:30
+PE 101,PE 101.B,Tenis,BARKIN YALÇINKALE,Perşembe 15:40 - 17:30
+PE 101,PE 101.C,Tenis,BARKIN YALÇINKALE,Perşembe 17:40 - 19:30
+PE 102,PE 102.A,Yüzme,LALE MEMDUHA ALPTOĞAN,Cuma 08:40 - 10:30
+PE 102,PE 102.B,Yüzme,LALE MEMDUHA ALPTOĞAN,Cuma 10:40 - 12:30
+PE 104,PE 104.A,Bilardo I,İLBAY DAĞDELEN,Cuma 14:40 - 16:30
+PE 104,PE 104.B,Bilardo I,İLBAY DAĞDELEN,Cuma 16:40 - 18:30
+PE 105,PE 105.A,Yelken,GÜRAY ZÜNBÜL,Salı 08:40 - 10:30
+PE 105,PE 105.B,Yelken,GÜRAY ZÜNBÜL,Perşembe 08:40 - 10:30
+PE 105,PE 105.C,Yelken,GÜRAY ZÜNBÜL,Cuma 08:40 - 10:30
+PE 107,PE 107.A,Satranç,ERSİN BAYSAN,Perşembe 18:40 - 20:30
+PE 107,PE 107.B,Satranç,ERSİN BAYSAN,Perşembe 08:40 - 10:30
+PE 107,PE 107.C,Satranç,ERSİN BAYSAN,Perşembe 10:40 - 12:30
+PE 112,PE 112.A,Masa Tenisi,KERİM ÖZAY,Salı 18:40 - 20:30
+PE 112,PE 112.B,Masa Tenisi,KERİM ÖZAY,Perşembe 18:40 - 20:30
+PE 112,PE 112.C,Masa Tenisi,KERİM ÖZAY,Cuma 18:40 - 20:30
+PE 112,PE 112.D,Masa Tenisi,KERİM ÖZAY,Cuma 16:40 - 18:30
+PE 114,PE 114.A,Hakemlik,AYBERK DİLMEN,Perşembe 16:40 - 18:30
+PE 116,PE 116.A,Bireysel Savunma,VLADİMİR SELİM KOÇ,Cuma 10:40 - 12:30 / Cuma 10:40 - 12:30
+PE 119,PE 119.A,Temel Fitnes Eğitimi,HUMAN FEYZANUR AKSOY,Perşembe 08:40 - 10:30
+PE 120,PE 120.A,Briç,SÜLEYMAN KOLATA,Salı 16:40 - 18:30
+PE 120,PE 120.B,Briç,SÜLEYMAN KOLATA,Salı 18:40 - 20:30
+PE 120,PE 120.C,Briç,SÜLEYMAN KOLATA,Cuma 16:40 - 18:30
+PE 121,PE 121.A,Suda Hayat Kurtarma ve İlk Yardım,ŞAHİN ÖZEN,Salı 15:40 - 17:30
+PE 123,PE 123.A,Temel Afet Eğitimi ve İlkyardım,BURÇAK TÜRKAY,Cuma 16:40 - 18:30
+PHIL 104,PHIL 104.A,Doğruluk,SİBEL OKTAR THOMAS,Cuma 08:40 - 11:30
+PHYS 101,PHYS 101.A,Fizik I,TAYLAN AKDOĞAN,Salı 10:40 - 12:30 / Perşembe 10:40 - 12:30
+PHYS 101,PHYS 101.B,Fizik I,MEHMET BURÇİN ÜNLÜ,Çarşamba 10:40 - 12:30 / Cuma 10:40 - 12:30
+PHYS 101,PHYS 101.C,Fizik I,SUEDA SAYLAN,Çarşamba 14:40 - 16:30 / Cuma 14:40 - 16:30
+PHYS 101,PHYS 101.D,Fizik I,SUEDA SAYLAN,Salı 10:40 - 12:30 / Perşembe 10:40 - 12:30
+PHYS 101,PHYS 101.E,Fizik I,KAAN GÜVEN,Çarşamba 10:40 - 12:30 / Cuma 10:40 - 12:30
+PHYS 101,PHYS 101.F,Fizik I,KAAN GÜVEN,Çarşamba 14:40 - 16:30 / Cuma 14:40 - 16:30
+PHYS 102,PHYS 102.A,Fizik II,BARIŞ DEMİRBAY,Salı 10:40 - 12:30 / Perşembe 10:40 - 12:30
+PHYS 102,PHYS 102.B,Fizik II,PARVIZ ELAHI,Çarşamba 10:40 - 12:30 / Cuma 10:40 - 12:30
+PHYS 102,PHYS 102.C,Fizik II,PARVIZ ELAHI,Çarşamba 14:40 - 16:30 / Cuma 14:40 - 16:30
+PHYS 103,PHYS 103.A,Havacılık için Fizik I,BARIŞ DEMİRBAY,Pazartesi 08:40 - 10:30
+PHYS 104,PHYS 104.A,Havacılık için Fizik II,BARIŞ DEMİRBAY,Pazartesi 10:40 - 12:30
+PSY 305,PSY 305.A,İş ve Örgüt Psikolojisi,HAYRİYE CANAN SÜMER,Perşembe 15:40 - 18:30
+PSY 405,PSY 405.A,Kamu Sağlığı ve Egzersiz Psikolojisi,DUYGU GÜRLEYİK,Çarşamba 15:40 - 18:30
+PSY 417,PSY 417.A,Benlik ve Kimlik,GÖKÇE TARCAN KUMKALE,Cuma 15:40 - 18:30
+RUS 101,RUS 101.A,Rusça I,ANNA EKICI,Pazartesi 08:40 - 10:30 / Cuma 08:40 - 10:30
+RUS 102,RUS 102.A,Rusça II,ANNA EKICI,Pazartesi 10:40 - 12:30 / Çarşamba 08:40 - 10:30
+RUS 201,RUS 201.A,Rusça III,ANNA EKICI,Pazartesi 16:40 - 18:30 / Çarşamba 12:40 - 14:30
+RUS 202,RUS 202.A,Rusça IV,ANNA EKICI,Pazartesi 13:40 - 15:30 / Perşembe 11:40 - 13:30
+SAS 101,SAS 101.A,Otel ve Yiyecek İçecek Endüstrisi,AYDIN BEYHAN,Pazartesi 10:40 - 13:30
+SAS 201,SAS 201.A,Hizmet Pazarlaması,AYDIN BEYHAN,Çarşamba 15:40 - 18:30
+SEC 150,SEC 150.A,Farkındalık/Mindfulness ile Yaşamak,AYŞE ZADİL,Salı 10:40 - 12:30
+SEC 150,SEC 150.B,Farkındalık/Mindfulness ile Yaşamak,AYŞE ZADİL,Cuma 10:40 - 12:30
+SEC 250,SEC 250.A,Öğrenmeyi Öğrenmek,EBRU KILIÇ BEBEK,Perşembe 15:40 - 18:30
+SEC 402,SEC 402.A,İşletme Entegrasyonu,ALPTEGİN ALBAYRAKTAROĞLU,Çarşamba 15:40 - 18:30
+SOC 201,SOC 201.A,Sosyal Bilimlere Giriş,BURCU MUTLU,Pazartesi 08:40 - 11:30
+SOC 201,SOC 201.B,Sosyal Bilimlere Giriş,BURCU MUTLU,Pazartesi 15:40 - 18:30
+SOC 201,SOC 201.C,Sosyal Bilimlere Giriş,AYŞE DENİZ ÜNAN GÖKTAN,Perşembe 08:40 - 11:30
+SPA 101,SPA 101.A,İspanyolca I,MELTEM MICHELE MARTINEZ VELASCO,Salı 14:40 - 16:30 / Perşembe 12:40 - 14:30
+SPA 101,SPA 101.B,İspanyolca I,ERVIN DALETH OSTOS SANTOS,Salı 14:40 - 16:30 / Cuma 14:40 - 16:30
+SPA 101,SPA 101.C,İspanyolca I,FABIANA CARINA ZALAZAR,Salı 08:40 - 10:30 / Perşembe 08:40 - 10:30
+SPA 101,SPA 101.D,İspanyolca I,FABIANA CARINA ZALAZAR,Salı 14:40 - 16:30 / Perşembe 14:40 - 16:30
+SPA 101,SPA 101.E,İspanyolca I,FABIANA CARINA ZALAZAR,Pazartesi 10:40 - 12:30 / Cuma 08:40 - 10:30
+SPA 102,SPA 102.A,İspanyolca II,ERVIN DALETH OSTOS SANTOS,Çarşamba 15:40 - 17:30 / Pazartesi 08:40 - 10:30
+SPA 102,SPA 102.B,İspanyolca II,MELTEM MICHELE MARTINEZ VELASCO,Cuma 14:40 - 16:30 / Pazartesi 11:40 - 13:30
+SPA 102,SPA 102.C,İspanyolca II,FABIANA CARINA ZALAZAR,Salı 11:40 - 13:30 / Cuma 10:40 - 12:30
+SPA 201,SPA 201.A,İspanyolca III,MELTEM MICHELE MARTINEZ VELASCO,Pazartesi 16:40 - 18:30 / Cuma 10:40 - 12:30
+SPA 201,SPA 201.B,İspanyolca III,ERVIN DALETH OSTOS SANTOS,Pazartesi 11:40 - 13:30 / Çarşamba 12:40 - 14:30
+SPA 202,SPA 202.A,İspanyolca IV,ERVIN DALETH OSTOS SANTOS,Çarşamba 10:40 - 12:30 / Cuma 10:40 - 12:30
+SPA 202,SPA 202.B,İspanyolca IV,MELTEM MICHELE MARTINEZ VELASCO,Salı 11:40 - 13:30 / Perşembe 09:40 - 11:30
+TURK 101,TURK 101.A,Yabancılar için Türkçe I,MEHMET ŞAMİL DAYANÇ,Çarşamba 16:40 - 19:30
+TURK 101,TURK 101.B,Yabancılar için Türkçe I,MEHMET ŞAMİL DAYANÇ,Perşembe 13:40 - 16:30
+TURK 101,TURK 101.C,Yabancılar için Türkçe I,MEHMET ŞAMİL DAYANÇ,Perşembe 17:40 - 20:30
+TURK 101,TURK 101.D,Yabancılar için Türkçe I,MEHMET ŞAMİL DAYANÇ,Cuma 14:40 - 17:30
+TURK 101,TURK 101.E,Yabancılar için Türkçe I,İLAYDA ENGİN UYSAL,Perşembe 13:40 - 16:30
+TURK 101,TURK 101.F,Yabancılar için Türkçe I,İLAYDA ENGİN UYSAL,Perşembe 17:40 - 20:30
+TURK 101,TURK 101.G,Yabancılar için Türkçe I,İLAYDA ENGİN UYSAL,Cuma 14:40 - 17:30
+TURK 101,TURK 101.H,Yabancılar için Türkçe I,İLAYDA ENGİN UYSAL,Çarşamba 16:40 - 19:30
+TURK 102,TURK 102.A,Yabancılar için Türkçe II,MEHMET ŞAMİL DAYANÇ,Salı 16:40 - 19:30
+TURK 102,TURK 102.B,Yabancılar için Türkçe II,İLAYDA ENGİN UYSAL,Salı 16:40 - 19:30
