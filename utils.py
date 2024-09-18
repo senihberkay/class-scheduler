@@ -1,20 +1,15 @@
-# import json
+import json
+import yaml
 
-# def load_data(filepath):
-#     with open(filepath, "r", encoding="utf-8") as f:
-#         return json.load(f)
+def load_data(filepath):
+    with open(filepath, "r", encoding="utf-8") as f:
+        return json.load(f)
 
-# def add_course_to_schedule(schedule_grid, day, start_time, duration, course_code):
-#     for i in range(duration):
-#         cell = schedule_grid[(day, start_time + i)]
-#         cell.config(text=course_code, bg="lightblue")
+def read_config(config_path):
+    with open(config_path, 'r') as file:
+        config = yaml.safe_load(file)
+    return config
 
-# def is_schedule_conflict(schedule_grid, day, start_time, duration):
-#     for i in range(duration):
-#         cell = schedule_grid[(day, start_time + i)]
-#         if cell.cget("text") != "":
-#             return True
-#     return False
 
 import requests
 from bs4 import BeautifulSoup
