@@ -1,0 +1,3 @@
+config:
+  scrape_url: "https://www.ozyegin.edu.tr/tr/acilan-dersler?program=BAMIS"
+  scrape_output: "courses.csv"
