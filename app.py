@@ -3,9 +3,9 @@ import pandas as pd
 import random
 import re
 from io import BytesIO
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
-import plotly.express as px
+# from reportlab.lib.pagesizes import letter
+# from reportlab.pdfgen import canvas
+# import plotly.express as px
 
 # Veriyi yükle
 data = pd.read_csv("courses_202420.csv")
@@ -183,14 +183,14 @@ def visualize_schedule(schedule):
     schedule_long = schedule_long[schedule_long['Ders'] != '-']
 
     # Grafik oluşturma
-    fig = px.scatter(schedule_long, x='Gün', y='Saat', text='Ders', 
-                     title='Ders Programı Görselleştirme', 
-                     labels={'Gün': 'Gün', 'Saat': 'Saat'},
-                     size_max=60)
+    # fig = px.scatter(schedule_long, x='Gün', y='Saat', text='Ders', 
+    #                  title='Ders Programı Görselleştirme', 
+    #                  labels={'Gün': 'Gün', 'Saat': 'Saat'},
+    #                  size_max=60)
     
     # Text etiketlerini ekleyerek göster
-    fig.update_traces(textposition='top center')
-    st.plotly_chart(fig)
+    # fig.update_traces(textposition='top center')
+    # st.plotly_chart(fig)
 
 # Sidebar'da Arama ve Filtreleme
 with st.sidebar:
@@ -396,21 +396,21 @@ st.markdown(generate_curved_table(schedule), unsafe_allow_html=True)
 # visualize_schedule(schedule)
 
 # Ders Programını PDF Olarak İndirme
-def create_pdf(schedule):
-    buffer = BytesIO()
-    p = canvas.Canvas(buffer, pagesize=letter)
-    p.drawString(100, 750, "Ders Programı")
-    y = 730
-    for day in schedule.columns:
-        p.drawString(100, y, f"{day}:")
-        y -= 20
-        for hour in schedule.index:
-            if schedule.at[hour, day] != '-':
-                p.drawString(120, y, f"{hour}: {schedule.at[hour, day]}")
-                y -= 20
-    p.save()
-    buffer.seek(0)
-    return buffer
+# def create_pdf(schedule):
+#     buffer = BytesIO()
+#     p = canvas.Canvas(buffer, pagesize=letter)
+#     p.drawString(100, 750, "Ders Programı")
+#     y = 730
+#     for day in schedule.columns:
+#         p.drawString(100, y, f"{day}:")
+#         y -= 20
+#         for hour in schedule.index:
+#             if schedule.at[hour, day] != '-':
+#                 p.drawString(120, y, f"{hour}: {schedule.at[hour, day]}")
+#                 y -= 20
+#     p.save()
+#     buffer.seek(0)
+#     return buffer
 
 # if st.button("Ders Programını PDF Olarak İndir"):
 #     pdf_buffer = create_pdf(schedule)
