@@ -1,5 +1,6 @@
 import React from 'react';
-import { Calendar, BookOpen, Users } from 'lucide-react';
+import { BookOpen, Users } from 'lucide-react';
+import logo from '../assets/ozu_schedule_logo.png';
 
 const Header = () => {
   return (
@@ -8,10 +9,8 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
-              <Calendar className="h-8 w-8 text-white" />
+              <img src={logo} alt="OZUchedule Logo" className="h-14 w-40" />
               <div>
-                <h1 className="text-2xl font-bold text-white">OZUchedule</h1>
-                <p className="text-sm text-white text-opacity-90">Özyeğin Üniversitesi Ders Programı</p>
               </div>
             </div>
           </div>
