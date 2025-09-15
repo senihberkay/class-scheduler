@@ -17,14 +17,24 @@ const Header = () => {
           </div>
           
           <div className="flex items-center space-x-6 text-sm text-white text-opacity-90">
-            <div className="flex items-center space-x-2">
+            <a 
+              href="https://www.ozyegin.edu.tr/tr/acilan-dersler" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:text-white transition-colors duration-200 cursor-pointer"
+            >
               <BookOpen className="h-4 w-4" />
               <span>Ders Kataloğu</span>
-            </div>
-            <div className="flex items-center space-x-2">
+            </a>
+            <a 
+              href="https://sis.ozyegin.edu.tr/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:text-white transition-colors duration-200 cursor-pointer"
+            >
               <Users className="h-4 w-4" />
               <span>Öğrenci Portalı</span>
-            </div>
+            </a>
           </div>
         </div>
       </div>
