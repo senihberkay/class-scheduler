@@ -14,7 +14,7 @@ fi
 # Uygulamayı başlat
 echo "🌟 React uygulaması başlatılıyor..."
 echo "📍 Frontend: http://localhost:3000"
-echo "🔗 Backend API: http://localhost:8000"
+echo "🔗 Backend API: http://localhost:8001"
 echo ""
 echo "Durdurmak için Ctrl+C tuşlayın"
 echo ""
