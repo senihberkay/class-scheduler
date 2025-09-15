@@ -1,15 +1,36 @@
 import React, { useState } from 'react';
-import { Search, BookOpen, Clock, User, X } from 'lucide-react';
+import { Search, BookOpen, Clock, User } from 'lucide-react';
 
 const CourseList = ({ courses, selectedCourses, onCourseSelection, onRemoveCourse }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedDay, setSelectedDay] = useState('');
   const [expandedCourses, setExpandedCourses] = useState(new Set());
 
-  // Arama filtresi
-  const filteredCourses = courses.filter(course =>
-    course.code.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    course.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Mevcut günleri al
+  const availableDays = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'];
+
+  // Arama ve gün filtresi - course ve section seviyesinde
+  const filteredCourses = courses.map(course => {
+    // Metin filtresi
+    const matchesSearch = course.code.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         course.name.toLowerCase().includes(searchTerm.toLowerCase());
+    
+    if (!matchesSearch) return null;
+    
+    // Section'ları gün filtresine göre filtrele
+    const filteredSections = course.sections.filter(section => {
+      if (selectedDay === '') return true;
+      return section.schedule.some(slot => slot.day === selectedDay);
+    });
+    
+    // Eğer hiç section kalmadıysa course'u gösterme
+    if (filteredSections.length === 0 && selectedDay !== '') return null;
+    
+    return {
+      ...course,
+      sections: filteredSections
+    };
+  }).filter(course => course !== null);
 
   // Ders genişletme/daraltma
   const toggleCourseExpansion = (courseCode) => {
@@ -66,7 +87,7 @@ const CourseList = ({ courses, selectedCourses, onCourseSelection, onRemoveCours
         <h2 className="text-lg font-semibold text-gray-900 mb-3">Dersler</h2>
         
         {/* Arama */}
-        <div className="relative">
+        <div className="relative mb-3">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
           <input
             type="text"
@@ -75,6 +96,20 @@ const CourseList = ({ courses, selectedCourses, onCourseSelection, onRemoveCours
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ozu-blue focus:border-transparent"
           />
+        </div>
+
+        {/* Gün Filtresi */}
+        <div className="relative">
+          <select
+            value={selectedDay}
+            onChange={(e) => setSelectedDay(e.target.value)}
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ozu-blue focus:border-transparent bg-white text-gray-700"
+          >
+            <option value="">Tüm günler</option>
+            {availableDays.map(day => (
+              <option key={day} value={day}>{day}</option>
+            ))}
+          </select>
         </div>
       </div>
 
@@ -100,7 +135,10 @@ const CourseList = ({ courses, selectedCourses, onCourseSelection, onRemoveCours
                     </div>
                   </div>
                   <div className={`text-xs px-2 py-1 rounded-full ${getCourseColor(course.code)}`}>
-                    {course.sections.length} Section
+                    {course.sections.length} Section{course.sections.length > 1 ? 's' : ''}
+                    {selectedDay && (
+                      <span className="ml-1 text-gray-500">({selectedDay})</span>
+                    )}
                   </div>
                 </button>
 

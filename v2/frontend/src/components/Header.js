@@ -11,7 +11,7 @@ const Header = () => {
               <Calendar className="h-8 w-8 text-ozu-blue" />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">OZUchedule</h1>
-                <p className="text-sm text-gray-600">V2 - Yeni Nesil Ders Programı</p>
+                <p className="text-sm text-gray-600">Özyeğin Üniversitesi Ders Programı</p>
               </div>
             </div>
           </div>
