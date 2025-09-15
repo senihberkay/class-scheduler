@@ -14,6 +14,11 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+# Local IP adresini al
+LOCAL_IP=$(ipconfig getifaddr en0 2>/dev/null || ipconfig getifaddr en1 2>/dev/null || echo "localhost")
+
+echo -e "${BLUE}🌐 Local IP Adresi: $LOCAL_IP${NC}"
+
 # Fonksiyon: Port kontrolü
 check_port() {
     local port=$1
@@ -50,10 +55,11 @@ start_backend() {
     echo -e "${YELLOW}📥 Bağımlılıklar yükleniyor...${NC}"
     pip install -r requirements.txt > /dev/null 2>&1
     
-    # Backend'i arka planda başlat
+    # Backend'i arka planda başlat - 0.0.0.0 ile tüm network interface'lere bind et
     echo -e "${GREEN}🌟 FastAPI uygulaması başlatılıyor...${NC}"
-    echo -e "${GREEN}📍 Backend: http://localhost:8001${NC}"
-    echo -e "${GREEN}📚 API Docs: http://localhost:8001/docs${NC}"
+    echo -e "${GREEN}📍 Local Backend: http://localhost:8001${NC}"
+    echo -e "${GREEN}📍 Network Backend: http://$LOCAL_IP:8001${NC}"
+    echo -e "${GREEN}📚 API Docs: http://$LOCAL_IP:8001/docs${NC}"
     
     uvicorn main:app --reload --host 0.0.0.0 --port 8001 > backend.log 2>&1 &
     BACKEND_PID=$!
@@ -90,12 +96,17 @@ start_frontend() {
         npm install > /dev/null 2>&1
     fi
     
-    # Frontend'i arka planda başlat
-    echo -e "${GREEN}🌟 React uygulaması başlatılıyor...${NC}"
-    echo -e "${GREEN}📍 Frontend: http://localhost:3000${NC}"
-    echo -e "${GREEN}🔗 Backend API: http://localhost:8001${NC}"
+    # .env dosyası oluştur/güncelle
+    echo "REACT_APP_API_URL=http://$LOCAL_IP:8001" > .env
+    echo "HOST=0.0.0.0" >> .env
     
-    npm start > frontend.log 2>&1 &
+    # Frontend'i arka planda başlat - HOST=0.0.0.0 ile network'e açık
+    echo -e "${GREEN}🌟 React uygulaması başlatılıyor...${NC}"
+    echo -e "${GREEN}📍 Local Frontend: http://localhost:3000${NC}"
+    echo -e "${GREEN}📍 Network Frontend: http://$LOCAL_IP:3000${NC}"
+    echo -e "${GREEN}🔗 Backend API: http://$LOCAL_IP:8001${NC}"
+    
+    HOST=0.0.0.0 npm start > frontend.log 2>&1 &
     FRONTEND_PID=$!
     
     # Frontend'in başlamasını bekle
@@ -178,12 +189,20 @@ main() {
     # Başarı mesajı
     echo -e "\n${GREEN}🎉 OZUchedule V2 Başarıyla Başlatıldı!${NC}"
     echo "=================================================="
-    echo -e "${GREEN}🌐 Frontend: http://localhost:3000${NC}"
-    echo -e "${GREEN}🔧 Backend:  http://localhost:8001${NC}"
-    echo -e "${GREEN}📚 API Docs: http://localhost:8001/docs${NC}"
+    echo -e "${GREEN}🌐 Local Frontend:   http://localhost:3000${NC}"
+    echo -e "${GREEN}🌍 Network Frontend: http://$LOCAL_IP:3000${NC}"
+    echo -e "${GREEN}🔧 Local Backend:    http://localhost:8001${NC}"
+    echo -e "${GREEN}🔧 Network Backend:  http://$LOCAL_IP:8001${NC}"
+    echo -e "${GREEN}📚 API Docs:         http://$LOCAL_IP:8001/docs${NC}"
     echo "=================================================="
+    echo -e "${YELLOW}📱 Diğer cihazlardan erişim için: http://$LOCAL_IP:3000${NC}"
     echo -e "${YELLOW}💡 Durdurmak için Ctrl+C tuşlayın${NC}"
     echo -e "${YELLOW}📋 Loglar: backend.log ve frontend.log dosyalarında${NC}"
+    echo ""
+    
+    # QR kod önerisi
+    echo -e "${BLUE}💡 İpucu: Mobil cihazlardan kolay erişim için QR kod oluşturabilirsiniz:${NC}"
+    echo -e "${BLUE}   https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=http://$LOCAL_IP:3000${NC}"
     echo ""
     
     # Süreçleri bekle
