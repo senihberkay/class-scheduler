@@ -139,7 +139,7 @@ temp/
 *.sqlite3
 
 # CSV files (eğer hassas veri içeriyorsa)
-# courses_202420.csv
+*.csv
 
 # Docker
 .dockerignore
