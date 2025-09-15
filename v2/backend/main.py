@@ -18,8 +18,10 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000", 
         "http://127.0.0.1:3000",
-        "https://*.vercel.app",
-        "https://*.railway.app"
+        "http://192.168.*:3000",  # Local network için
+        "http://10.*:3000",      # Bazı router'lar için
+        "http://172.*:3000",     # Bazı network'ler için
+        "*"                      # Geliştirme için tüm origin'lere izin
     ],
     allow_credentials=True,
     allow_methods=["*"],
