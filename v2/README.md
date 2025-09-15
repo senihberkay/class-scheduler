@@ -33,12 +33,25 @@ OZUchedule V2, Özyeğin Üniversitesi öğrencilerinin ders programlarını kol
 
 ### 🎯 Tek Komutla Başlatma
 
+#### Yerel Geliştirme Modunda
 ```bash
 # Tüm uygulamayı başlat (Backend + Frontend)
 ./start.sh
 
 # Uygulamaları durdur
 ./stop.sh
+```
+
+#### Docker Modunda (Önerilen)
+```bash
+# Docker ile detaylı başlatma (sağlık kontrolleri dahil)
+./start-docker.sh
+
+# Docker ile hızlı başlatma
+./docker-quick.sh
+
+# Docker servislerini durdur
+./stop-docker.sh
 ```
 
 ### Yerel Geliştirme
@@ -74,12 +87,41 @@ npm start
 
 ### Docker ile Çalıştırma
 
+#### 🚀 Hızlı Başlatma (Önerilen)
 ```bash
-# Tüm servisleri başlat
-docker-compose up --build
+# En hızlı yol - tek komutla başlat
+./docker-quick.sh
 
-# Arka planda çalıştır
-docker-compose up -d --build
+# Detaylı başlatma (sağlık kontrolleri ve log takibi ile)
+./start-docker.sh
+
+# Manuel Docker Compose
+docker-compose up --build -d
+```
+
+#### 🛑 Durdurma ve Temizlik
+```bash
+# Akıllı durdurma (temizlik seçenekleri ile)
+./stop-docker.sh
+
+# Hızlı durdurma
+docker-compose down
+
+# Tam temizlik (container + image + volume)
+docker-compose down --volumes --rmi all
+```
+
+#### 🔍 Docker Durum Kontrolü
+```bash
+# Container durumunu görüntüle
+docker-compose ps
+
+# Canlı logları izle
+docker-compose logs -f
+
+# Belirli servis logları
+docker-compose logs -f ozuchedule-frontend
+docker-compose logs -f ozuchedule-backend
 ```
 
 ## 📁 Proje Yapısı
@@ -98,8 +140,40 @@ v2/
 │   ├── package.json         # Node.js bağımlılıkları
 │   └── Dockerfile          # Frontend Docker yapılandırması
 ├── docker-compose.yml       # Docker Compose yapılandırması
+├── start.sh                 # Yerel başlatma scripti
+├── stop.sh                  # Yerel durdurma scripti
+├── start-docker.sh          # Docker detaylı başlatma scripti
+├── stop-docker.sh           # Docker durdurma scripti
+├── docker-quick.sh          # Docker hızlı başlatma scripti
 └── README.md               # Bu dosya
 ```
+
+## 🐳 Docker Yapılandırması
+
+### Özellikler
+
+- **Health Checks**: Backend ve frontend için otomatik sağlık kontrolleri
+- **Named Containers**: Kolay yönetim için özel container isimleri
+- **Volume Management**: Log dosyaları için persistent storage
+- **Network Isolation**: Güvenli container iletişimi
+- **Dependency Management**: Frontend backend'in hazır olmasını bekler
+- **Environment Variables**: Production-ready yapılandırma
+- **Restart Policy**: Hata durumunda otomatik yeniden başlatma
+
+### Docker Compose Servisleri
+
+| Servis | Container | Port | Açıklama |
+|--------|-----------|------|----------|
+| ozuchedule-backend | ozuchedule-backend | 8001 | FastAPI Backend |
+| ozuchedule-frontend | ozuchedule-frontend | 3000 | React Frontend |
+
+### Docker Scriptleri
+
+| Script | Açıklama |
+|--------|----------|
+| `start-docker.sh` | Detaylı başlatma (sağlık kontrolleri, log takibi) |
+| `docker-quick.sh` | Hızlı başlatma (minimum output) |
+| `stop-docker.sh` | Akıllı durdurma (temizlik seçenekleri) |
 
 ## 🔧 API Endpoints
 
@@ -256,19 +330,94 @@ docker-compose -f docker-compose.nginx.yml up --build
 
 ### Yaygın Sorunlar
 
+#### Genel Sorunlar
 1. **CORS Hatası**: Backend CORS ayarlarını kontrol edin
 2. **Port Çakışması**: 3000 ve 8001 portlarının boş olduğundan emin olun
 3. **Veri Yükleme Hatası**: CSV dosyasının doğru konumda olduğunu kontrol edin
-4. **Script Çalışmıyor**: `chmod +x start.sh stop.sh` ile scriptleri çalıştırılabilir yapın
+4. **Script Çalışmıyor**: `chmod +x *.sh` ile scriptleri çalıştırılabilir yapın
+
+#### Docker Sorunları
+1. **Docker Çalışmıyor**: `docker info` ile Docker'ın çalıştığını kontrol edin
+2. **Container Başlamıyor**: `docker-compose ps` ile container durumunu kontrol edin
+3. **Port Erişimi**: `docker-compose logs [servis-adı]` ile logları kontrol edin
+4. **Build Hatası**: `docker system prune -f` ile temizlik yapın ve tekrar deneyin
+5. **Health Check Başarısız**: Backend `/health` endpoint'inin çalıştığını kontrol edin
 
 ### Log Kontrolü
 
+#### Yerel Geliştirme
 ```bash
 # Backend logları
-docker-compose logs backend
+tail -f v2/backend/backend.log
 
 # Frontend logları
-docker-compose logs frontend
+tail -f v2/frontend/frontend.log
+```
+
+#### Docker Logları
+```bash
+# Tüm servislerin logları
+docker-compose logs -f
+
+# Belirli servis logları
+docker-compose logs -f ozuchedule-backend
+docker-compose logs -f ozuchedule-frontend
+
+# Son 100 satır log
+docker-compose logs --tail=100 ozuchedule-backend
+```
+
+### Sistem Durumu Kontrolü
+
+#### Docker Container Durumu
+```bash
+# Container durumları
+docker-compose ps
+
+# Sistem kaynak kullanımı
+docker stats
+
+# Container detayları
+docker inspect ozuchedule-backend
+docker inspect ozuchedule-frontend
+```
+
+#### Port ve Network Kontrolü
+```bash
+# Port kullanımı
+lsof -i :3000
+lsof -i :8001
+
+# Docker network
+docker network ls
+docker network inspect ozuchedule-network
+```
+
+### Temizlik ve Reset
+
+#### Docker Temizliği
+```bash
+# Hafif temizlik
+docker-compose down
+docker container prune -f
+
+# Orta temizlik
+docker-compose down --volumes
+docker image prune -f
+
+# Tam temizlik (DİKKAT: Tüm data silinir!)
+./stop-docker.sh  # Seçenek 4'ü seçin
+```
+
+#### Sistem Reset
+```bash
+# Tüm local değişiklikleri sıfırla
+git clean -fd
+git reset --hard HEAD
+
+# Dependency'leri yeniden yükle
+cd backend && pip install -r requirements.txt
+cd ../frontend && npm install
 ```
 
 ## 🤝 Katkıda Bulunma
