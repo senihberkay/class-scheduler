@@ -5,6 +5,7 @@ import pandas as pd
 import json
 from datetime import datetime
 import os
+import sqlite3
 
 app = FastAPI(
     title="OZUchedule V2 API",
@@ -28,15 +29,87 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Veri yükleme fonksiyonu
-def load_courses_data():
-    """CSV dosyasından ders verilerini yükler ve JSON formatına dönüştürür"""
+# Veri yükleme fonksiyonları
+def load_courses_from_db():
+    """SQLite veritabanından en yeni termin ders verilerini yükler"""
     try:
-        csv_path = "courses.csv"
+        db_path = "../scraper/courses.db"
+        if not os.path.exists(db_path):
+            print(f"Veritabanı bulunamadı: {db_path}")
+            return None
+        
+        conn = sqlite3.connect(db_path)
+        
+        # En yeni termi bul
+        cursor = conn.cursor()
+        cursor.execute("SELECT MAX(term) FROM courses")
+        max_term = cursor.fetchone()[0]
+        
+        if not max_term:
+            print("Veritabanında term bulunamadı")
+            conn.close()
+            return None
+        
+        print(f"En yeni term kullanılıyor: {max_term}")
+        
+        # En yeni termin verilerini al
+        query = """
+        SELECT "Ders Kodu", "Ders Adı", "Ders Section", "Hoca", "Saat"
+        FROM courses 
+        WHERE term = ?
+        ORDER BY "Ders Kodu", "Ders Section"
+        """
+        
+        df = pd.read_sql_query(query, conn, params=(max_term,))
+        conn.close()
+        
+        if df.empty:
+            print(f"Term {max_term} için ders bulunamadı")
+            return None
+        
+        print(f"Veritabanından {len(df)} ders yüklendi")
+        return df
+        
+    except Exception as e:
+        print(f"Veritabanından veri yükleme hatası: {e}")
+        return None
+
+def load_courses_from_csv():
+    """CSV dosyasından ders verilerini yükler (fallback)"""
+    try:
+        # İlk önce scraper klasöründeki CSV'yi dene
+        csv_path = "../scraper/courses.csv"
         if not os.path.exists(csv_path):
-            return create_sample_data()
+            # Fallback olarak mevcut dizindeki CSV'yi dene
+            csv_path = "courses.csv"
+            if not os.path.exists(csv_path):
+                print("CSV dosyası bulunamadı")
+                return None
         
         df = pd.read_csv(csv_path)
+        print(f"CSV dosyasından {len(df)} ders yüklendi: {csv_path}")
+        return df
+        
+    except Exception as e:
+        print(f"CSV'den veri yükleme hatası: {e}")
+        return None
+
+def load_courses_data():
+    """Ders verilerini yükler ve JSON formatına dönüştürür"""
+    try:
+        # Önce veritabanından dene
+        df = load_courses_from_db()
+        
+        # Veritabanından yüklenemediyse CSV'den dene
+        if df is None:
+            print("Veritabanından yüklenemedi, CSV'den deneniyor...")
+            df = load_courses_from_csv()
+        
+        # Hiçbirinden yüklenemediyse örnek veri oluştur
+        if df is None:
+            print("Hiçbir veri kaynağından yüklenemedi, örnek veri kullanılıyor")
+            return create_sample_data()
+        
         courses_dict = {}
         
         for _, row in df.iterrows():
