@@ -3,20 +3,20 @@ import { Calendar, BookOpen, Users } from 'lucide-react';
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200">
+    <header className="sticky top-0 z-50 bg-ozu-red shadow-sm border-b border-ozu-red-dark">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
-              <Calendar className="h-8 w-8 text-ozu-red" />
+              <Calendar className="h-8 w-8 text-white" />
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">OZUchedule</h1>
-                <p className="text-sm text-gray-600">Özyeğin Üniversitesi Ders Programı</p>
+                <h1 className="text-2xl font-bold text-white">OZUchedule</h1>
+                <p className="text-sm text-white text-opacity-90">Özyeğin Üniversitesi Ders Programı</p>
               </div>
             </div>
           </div>
           
-          <div className="flex items-center space-x-6 text-sm text-gray-600">
+          <div className="flex items-center space-x-6 text-sm text-white text-opacity-90">
             <div className="flex items-center space-x-2">
               <BookOpen className="h-4 w-4" />
               <span>Ders Kataloğu</span>
