@@ -1,14 +1,92 @@
-import React from 'react';
-import { Calendar, MapPin, User, X, Download, Trash2 } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Calendar, MapPin, User, X, Download, Trash2, ChevronDown } from 'lucide-react';
 import { toast } from 'react-hot-toast';
+import html2canvas from 'html2canvas';
 
 const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse, onClearAll }) => {
+  const [showExportDropdown, setShowExportDropdown] = useState(false);
+  const [showTopExportDropdown, setShowTopExportDropdown] = useState(false);
+  const scheduleGridRef = useRef(null);
+  
   const days = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma'];
   const timeSlots = [
     '08:40-09:30', '09:40-10:30', '10:40-11:30', '11:40-12:30',
     '12:40-13:30', '13:40-14:30', '14:40-15:30', '15:40-16:30',
     '16:40-17:30', '17:40-18:30'
   ];
+
+  // PNG export fonksiyonu
+  const exportScheduleToPng = async () => {
+    if (selectedCourses.length === 0) {
+      alert('Önce ders seçmeniz gerekiyor!');
+      return;
+    }
+
+    try {
+      const gridElement = scheduleGridRef.current;
+      if (!gridElement) {
+        toast.error('Ders programı bulunamadı!');
+        return;
+      }
+
+      toast.loading('PNG dosyası hazırlanıyor...', {
+        duration: 2000,
+        position: 'top-center',
+      });
+
+      // Scroll pozisyonunu sıfırla
+      const originalScrollTop = gridElement.scrollTop;
+      const originalScrollLeft = gridElement.scrollLeft;
+      gridElement.scrollTop = 0;
+      gridElement.scrollLeft = 0;
+
+      const canvas = await html2canvas(gridElement, {
+        scale: 1.5,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: '#ffffff',
+        logging: false,
+        width: gridElement.scrollWidth,
+        height: gridElement.scrollHeight
+      });
+
+      // Scroll pozisyonunu geri yükle
+      gridElement.scrollTop = originalScrollTop;
+      gridElement.scrollLeft = originalScrollLeft;
+
+      const link = document.createElement('a');
+      link.download = `ders_programi_${new Date().toISOString().split('T')[0]}.png`;
+      link.href = canvas.toDataURL('image/png', 0.95);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      toast.success('Ders programı başarıyla PNG olarak indirildi!', {
+        duration: 3000,
+        position: 'top-center',
+      });
+    } catch (error) {
+      console.error('PNG export hatası:', error);
+      toast.error('PNG dosyası oluşturulurken bir hata oluştu: ' + error.message);
+    }
+  };
+
+  // Dropdown dışına tıklandığında kapatma
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showExportDropdown && !event.target.closest('.export-dropdown')) {
+        setShowExportDropdown(false);
+      }
+      if (showTopExportDropdown && !event.target.closest('.top-export-dropdown')) {
+        setShowTopExportDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showExportDropdown, showTopExportDropdown]);
 
   // Program export fonksiyonu
   const exportScheduleToTxt = () => {
@@ -234,14 +312,46 @@ const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse, onClearAll })
                 <Trash2 className="h-4 w-4" />
                 <span>Temizle</span>
               </button>
-              <button
-                onClick={exportScheduleToTxt}
-                className="flex items-center space-x-2 bg-ozu-blue text-white px-4 py-2 rounded-lg hover:bg-ozu-light-blue transition-colors text-sm"
-                title="Programı TXT olarak indir"
-              >
-                <Download className="h-4 w-4" />
-                <span>Export TXT</span>
-              </button>
+              
+              {/* Top Export Dropdown */}
+              <div className="relative top-export-dropdown">
+                <button
+                  onClick={() => setShowTopExportDropdown(!showTopExportDropdown)}
+                  className="flex items-center space-x-2 bg-ozu-blue text-white px-4 py-2 rounded-lg hover:bg-ozu-light-blue transition-colors text-sm"
+                  title="Programı export et"
+                >
+                  <Download className="h-4 w-4" />
+                  <span>Export</span>
+                  <ChevronDown className="h-3 w-3" />
+                </button>
+                
+                {showTopExportDropdown && (
+                  <div className="absolute right-0 mt-1 w-36 bg-white rounded-md shadow-lg border border-gray-200 z-50">
+                    <div className="py-1">
+                      <button
+                        onClick={() => {
+                          exportScheduleToTxt();
+                          setShowTopExportDropdown(false);
+                        }}
+                        className="flex items-center w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                      >
+                        <Download className="h-4 w-4 mr-2" />
+                        <span>as TXT</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          exportScheduleToPng();
+                          setShowTopExportDropdown(false);
+                        }}
+                        className="flex items-center w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                      >
+                        <Download className="h-4 w-4 mr-2" />
+                        <span>as PNG</span>
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -253,7 +363,7 @@ const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse, onClearAll })
       </div>
 
       {/* Program Grid */}
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto" ref={scheduleGridRef}>
         <div className="min-w-full">
           {/* Gün başlıkları */}
           <div className="grid grid-cols-6 border-b border-gray-200">
@@ -381,14 +491,46 @@ const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse, onClearAll })
                 <Trash2 className="h-3 w-3" />
                 <span>Temizle</span>
               </button>
-              <button
-                onClick={exportScheduleToTxt}
-                className="flex items-center space-x-1 bg-green-600 text-white px-3 py-1.5 rounded text-xs hover:bg-green-700 transition-colors"
-                title="Programı TXT olarak indir"
-              >
-                <Download className="h-3 w-3" />
-                <span>TXT İndir</span>
-              </button>
+              
+              {/* Export Dropdown */}
+              <div className="relative export-dropdown">
+                <button
+                  onClick={() => setShowExportDropdown(!showExportDropdown)}
+                  className="flex items-center space-x-1 bg-green-600 text-white px-3 py-1.5 rounded text-xs hover:bg-green-700 transition-colors"
+                  title="Programı export et"
+                >
+                  <Download className="h-3 w-3" />
+                  <span>Export</span>
+                  <ChevronDown className="h-3 w-3" />
+                </button>
+                
+                {showExportDropdown && (
+                  <div className="absolute right-0 mt-1 w-32 bg-white rounded-md shadow-lg border border-gray-200 z-50">
+                    <div className="py-1">
+                      <button
+                        onClick={() => {
+                          exportScheduleToTxt();
+                          setShowExportDropdown(false);
+                        }}
+                        className="flex items-center w-full px-3 py-2 text-xs text-gray-700 hover:bg-gray-100 transition-colors"
+                      >
+                        <Download className="h-3 w-3 mr-2" />
+                        <span>as TXT</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          exportScheduleToPng();
+                          setShowExportDropdown(false);
+                        }}
+                        className="flex items-center w-full px-3 py-2 text-xs text-gray-700 hover:bg-gray-100 transition-colors"
+                      >
+                        <Download className="h-3 w-3 mr-2" />
+                        <span>as PNG</span>
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
