@@ -1,0 +1,29 @@
+# Faculty Names Mapping
+# Turkish faculty names as they appear on the website
+faculties:
+  "İşletme Fakültesi": "İşletme Fakültesi"
+  "Mühendislik Fakültesi": "Mühendislik Fakültesi"
+  "Sosyal Bilimler Fakültesi": "Sosyal Bilimler Fakültesi" 
+  "Hukuk Fakültesi": "Hukuk Fakültesi"
+  "Mimarlık ve Tasarım Fakültesi": "Mimarlık ve Tasarım Fakültesi"
+  "Uygulamalı Bilimler Fakültesi": "Uygulamalı Bilimler Fakültesi"
+  "Havacılık ve Uzay Bilimleri Fakültesi": "Havacılık ve Uzay Bilimleri Fakültesi"
+  "Fen Bilimleri Enstitüsü": "Fen Bilimleri Enstitüsü"
+  "Sosyal Bilimler Enstitüsü": "Sosyal Bilimler Enstitüsü"
+  "İşletme Enstitüsü": "İşletme Enstitüsü"
+  "Le Cordon Bleu": "Le Cordon Bleu"
+  "Uygulamalı Bilimler Yüksekokulu": "Uygulamalı Bilimler Yüksekokulu"
+  "Sivil Havacılık Yüksekokulu": "Sivil Havacılık Yüksekokulu"
+
+# Default faculty if none specified  
+default_faculty: "İşletme Fakültesi"
+
+# English aliases for convenience
+aliases:
+  "Business": "İşletme Fakültesi"
+  "Engineering": "Mühendislik Fakültesi"
+  "Law": "Hukuk Fakültesi"
+  "Social Sciences": "Sosyal Bilimler Fakültesi"
+  "Architecture": "Mimarlık ve Tasarım Fakültesi"
+  "Applied Sciences": "Uygulamalı Bilimler Fakültesi"
+  "Aviation": "Havacılık ve Uzay Bilimleri Fakültesi"

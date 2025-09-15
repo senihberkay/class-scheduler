@@ -1,0 +1,72 @@
+# Program Codes Mapping
+# User-friendly program names to codes
+
+# İşletme Fakültesi Programs
+business_faculty:
+  "Yönetim Bilişim Sistemleri": "BAMIS"
+  "İşletme": "BABUS" 
+  "Girişimcilik": "BAENT"
+  "Uluslararası Finans": "BABAF"
+  "Ekonomi": "BAECON"
+  "Uluslararası Ticaret ve İşletmecilik": "BAIBUS"
+  "Uluslararası İşletmecilik ve Ticaret": "BAIB"
+
+# Mühendislik Fakültesi Programs  
+engineering_faculty:
+  "Bilgisayar Mühendisliği": "BACS"
+  "Elektrik-Elektronik Mühendisliği": "BAEE"
+  "Endüstri Mühendisliği": "BAIE"
+  "Makine Mühendisliği": "BAME"
+  "İnşaat Mühendisliği": "BACE"
+
+# Sosyal Bilimler Fakültesi Programs
+social_sciences_faculty:
+  "Uluslararası İlişkiler": "BAIR"
+  "Psikoloji": "BAPSY"
+
+# Hukuk Fakültesi Programs
+law_faculty:
+  "Hukuk": "BALAW"
+
+# Mimarlık ve Tasarım Fakültesi Programs
+architecture_faculty:
+  "Mimarlık": "BAARC"
+  "İç Mimarlık ve Çevre Tasarımı": "BAINT"
+  "Grafik Tasarım": "BAGD"
+  "Gastronomi ve Mutfak Sanatları": "BAGAST"
+
+# Uygulamalı Bilimler Fakültesi Programs
+applied_sciences_faculty:
+  "Uçak Elektrik-Elektronik": "BAAE"
+  "Uçak Gövde-Motor": "BAAMT"
+  "Hava Trafik Kontrolü": "BAATC"
+  "Pilotaj": "BAPILOT"
+
+# Default program
+default_program: "BAMIS"
+
+# Direct code mapping (for backward compatibility)
+codes:
+  "BAMIS": "BAMIS"
+  "BABUS": "BABUS"
+  "BAENT": "BAENT"
+  "BABAF": "BABAF"
+  "BAECON": "BAECON"
+  "BAIBUS": "BAIBUS"
+  "BAIB": "BAIB"
+  "BACS": "BACS"
+  "BAEE": "BAEE"
+  "BAIE": "BAIE"
+  "BAME": "BAME"
+  "BACE": "BACE"
+  "BAIR": "BAIR"
+  "BAPSY": "BAPSY"
+  "BALAW": "BALAW"
+  "BAARC": "BAARC"
+  "BAINT": "BAINT"
+  "BAGD": "BAGD"
+  "BAGAST": "BAGAST"
+  "BAAE": "BAAE"
+  "BAAMT": "BAAMT"
+  "BAATC": "BAATC"
+  "BAPILOT": "BAPILOT"

@@ -1,0 +1,6 @@
+mis_courses:
+  scrape_url: "https://www.ozyegin.edu.tr/tr/acilan-dersler"
+  scrape_output: "courses.db"  # SQLite database - change to .csv for CSV output
+  scrape_term: "2025 - 2026 Güz"  # User-friendly term name
+  scrape_faculty: "İşletme Fakültesi"  # Faculty name
+  scrape_program: "Yönetim Bilişim Sistemleri"  # User-friendly program name
