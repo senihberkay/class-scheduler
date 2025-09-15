@@ -1,0 +1,10 @@
+# Netlify Frontend Deployment
+
+[build]
+  command = "cd v2/frontend && npm install && npm run build"
+  publish = "v2/frontend/build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
