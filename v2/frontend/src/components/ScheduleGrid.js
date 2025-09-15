@@ -1,13 +1,127 @@
 import React from 'react';
-import { Calendar, MapPin, User, X } from 'lucide-react';
+import { Calendar, MapPin, User, X, Download, Trash2 } from 'lucide-react';
+import { toast } from 'react-hot-toast';
 
-const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse }) => {
+const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse, onClearAll }) => {
   const days = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma'];
   const timeSlots = [
     '08:40-09:30', '09:40-10:30', '10:40-11:30', '11:40-12:30',
     '12:40-13:30', '13:40-14:30', '14:40-15:30', '15:40-16:30',
     '16:40-17:30', '17:40-18:30'
   ];
+
+  // Program export fonksiyonu
+  const exportScheduleToTxt = () => {
+    if (selectedCourses.length === 0) {
+      alert('Önce ders seçmeniz gerekiyor!');
+      return;
+    }
+
+    let content = '';
+    content += '==============================================\n';
+    content += '           HAFTALIK DERS PROGRAMI\n';
+    content += '==============================================\n\n';
+    
+    // Toplam ders sayısı
+    content += `Toplam Seçili Ders Sayısı: ${selectedCourses.length}\n\n`;
+    
+    // Ders listesi
+    content += 'SEÇİLİ DERSLER:\n';
+    content += '==============================================\n';
+    selectedCourses.forEach((course, index) => {
+      content += `${index + 1}. ${course.code} - ${course.name}\n`;
+      content += `   Bölüm: ${course.section}\n`;
+      content += `   Öğretim Görevlisi: ${course.instructor}\n`;
+      content += '   Program:\n';
+      
+      course.schedule.forEach(slot => {
+        const endTime = slot.end || (slot.duration > 1 ? 
+          timeSlots[timeSlots.findIndex(ts => ts.startsWith(slot.start)) + slot.duration - 1]?.split('-')[1] || '' 
+          : timeSlots.find(ts => ts.startsWith(slot.start))?.split('-')[1] || '');
+        
+        content += `     ${slot.day}: ${slot.start} - ${endTime}`;
+        if (slot.duration > 1) {
+          content += ` (${slot.duration} saat)`;
+        }
+        content += ` - ${slot.room}\n`;
+      });
+      content += '\n';
+    });
+    
+    // Günlük program
+    content += '\nGÜNLÜK PROGRAM:\n';
+    content += '==============================================\n';
+    
+    days.forEach(day => {
+      content += `\n${day.toUpperCase()}:\n`;
+      content += '----------------------------------------------\n';
+      
+      let dayHasCourses = false;
+      const daySchedule = [];
+      
+      // Bu günün derslerini topla ve saate göre sırala
+      selectedCourses.forEach(course => {
+        course.schedule.forEach(slot => {
+          if (slot.day === day) {
+            const endTime = slot.end || (slot.duration > 1 ? 
+              timeSlots[timeSlots.findIndex(ts => ts.startsWith(slot.start)) + slot.duration - 1]?.split('-')[1] || '' 
+              : timeSlots.find(ts => ts.startsWith(slot.start))?.split('-')[1] || '');
+            
+            daySchedule.push({
+              start: slot.start,
+              end: endTime,
+              code: course.code,
+              name: course.name,
+              section: course.section,
+              instructor: course.instructor,
+              room: slot.room,
+              duration: slot.duration
+            });
+            dayHasCourses = true;
+          }
+        });
+      });
+      
+      if (dayHasCourses) {
+        // Saate göre sırala
+        daySchedule.sort((a, b) => a.start.localeCompare(b.start));
+        
+        daySchedule.forEach(slot => {
+          content += `${slot.start} - ${slot.end}  ${slot.code} (${slot.section})\n`;
+          content += `                    ${slot.name}\n`;
+          content += `                    Öğr. Gör.: ${slot.instructor}\n`;
+          content += `                    Oda: ${slot.room}`;
+          if (slot.duration > 1) {
+            content += ` (${slot.duration} saat)`;
+          }
+          content += '\n\n';
+        });
+      } else {
+        content += 'Bu günde ders yok.\n\n';
+      }
+    });
+    
+    content += '\n==============================================\n';
+    content += `Oluşturulma Tarihi: ${new Date().toLocaleString('tr-TR')}\n`;
+    content += '==============================================\n';
+    
+    // Dosyayı indirilebilir hale getir
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `ders_programi_${new Date().toISOString().split('T')[0]}.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    
+    // Başarı bildirimi
+    toast.success('Ders programı başarıyla TXT olarak indirildi!', {
+      duration: 3000,
+      position: 'top-center',
+    });
+  };
 
   // Gelişmiş renk oluşturma sistemi
   const getCourseColor = (courseCode) => {
@@ -105,9 +219,31 @@ const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse }) => {
     <div className="bg-white rounded-lg shadow-sm border border-gray-200">
       {/* Header */}
       <div className="p-4 border-b border-gray-200">
-        <div className="flex items-center space-x-2">
-          <Calendar className="h-5 w-5 text-ozu-blue" />
-          <h2 className="text-lg font-semibold text-gray-900">Haftalık Program</h2>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <Calendar className="h-5 w-5 text-ozu-blue" />
+            <h2 className="text-lg font-semibold text-gray-900">Haftalık Program</h2>
+          </div>
+          {selectedCourses.length > 0 && (
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={onClearAll}
+                className="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors text-sm"
+                title="Tüm dersleri temizle"
+              >
+                <Trash2 className="h-4 w-4" />
+                <span>Temizle</span>
+              </button>
+              <button
+                onClick={exportScheduleToTxt}
+                className="flex items-center space-x-2 bg-ozu-blue text-white px-4 py-2 rounded-lg hover:bg-ozu-light-blue transition-colors text-sm"
+                title="Programı TXT olarak indir"
+              >
+                <Download className="h-4 w-4" />
+                <span>Export TXT</span>
+              </button>
+            </div>
+          )}
         </div>
         {selectedCourses.length > 0 && (
           <p className="text-sm text-gray-600 mt-1">
@@ -234,7 +370,27 @@ const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse }) => {
       {/* Seçili dersler özeti */}
       {selectedCourses.length > 0 && (
         <div className="p-4 border-t border-gray-200 bg-gray-50">
-          <h3 className="text-sm font-medium text-gray-700 mb-3">Seçili Dersler</h3>
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-sm font-medium text-gray-700">Seçili Dersler</h3>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={onClearAll}
+                className="flex items-center space-x-1 bg-red-600 text-white px-3 py-1.5 rounded text-xs hover:bg-red-700 transition-colors"
+                title="Tüm dersleri temizle"
+              >
+                <Trash2 className="h-3 w-3" />
+                <span>Temizle</span>
+              </button>
+              <button
+                onClick={exportScheduleToTxt}
+                className="flex items-center space-x-1 bg-green-600 text-white px-3 py-1.5 rounded text-xs hover:bg-green-700 transition-colors"
+                title="Programı TXT olarak indir"
+              >
+                <Download className="h-3 w-3" />
+                <span>TXT İndir</span>
+              </button>
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {selectedCourses.map((course, index) => (
               <div key={index} className="flex items-center space-x-3 p-2 bg-white rounded border relative group">
