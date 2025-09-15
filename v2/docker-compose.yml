@@ -1,33 +1,69 @@
-version: '3.8'
-
 services:
-  backend:
-    build: ./backend
+  # OZUchedule V2 Backend Service
+  ozuchedule-backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ozuchedule-backend
     ports:
       - "8001:8001"
     environment:
       - PYTHONPATH=/app
+      - HOST=0.0.0.0
+      - PORT=8001
     volumes:
       - ./backend:/app
+      - backend_logs:/app/logs
     command: uvicorn main:app --host 0.0.0.0 --port 8001 --reload
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
     networks:
       - ozuchedule-network
 
-  frontend:
-    build: ./frontend
+  # OZUchedule V2 Frontend Service
+  ozuchedule-frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ozuchedule-frontend
     ports:
       - "3000:3000"
     environment:
-      - REACT_APP_API_URL=http://localhost:8001
+      - REACT_APP_API_URL=http://${HOST_IP}:8001
+      - HOST=0.0.0.0
+      - PORT=3000
+      - WDS_SOCKET_HOST=0.0.0.0
+      - WATCHPACK_POLLING=true
     volumes:
       - ./frontend:/app
       - /app/node_modules
+      - frontend_logs:/app/logs
     depends_on:
-      - backend
+      ozuchedule-backend:
+        condition: service_healthy
     command: npm start
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
     networks:
       - ozuchedule-network
+
+volumes:
+  backend_logs:
+    driver: local
+  frontend_logs:
+    driver: local
 
 networks:
   ozuchedule-network:
     driver: bridge
+    name: ozuchedule-network
