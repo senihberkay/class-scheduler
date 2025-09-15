@@ -162,6 +162,20 @@ function App() {
     toast.success(`${courseCode} (${section}) kaldırıldı!`);
   };
 
+  // Tüm dersleri temizle
+  const clearAllCourses = () => {
+    if (selectedCourses.length === 0) {
+      toast.error('Temizlenecek ders bulunamadı!');
+      return;
+    }
+    
+    const courseCount = selectedCourses.length;
+    setSelectedCourses([]);
+    setSchedule({});
+    setConflicts([]);
+    toast.success(`${courseCount} ders programdan temizlendi!`);
+  };
+
   if (loading) {
     return <LoadingSpinner />;
   }
@@ -208,6 +222,7 @@ function App() {
               schedule={schedule}
               selectedCourses={selectedCourses}
               onRemoveCourse={removeCourse}
+              onClearAll={clearAllCourses}
             />
           </div>
         </div>
