@@ -135,10 +135,7 @@ const CourseList = ({ courses, selectedCourses, onCourseSelection, onRemoveCours
                     </div>
                   </div>
                   <div className={`text-xs px-2 py-1 rounded-full ${getCourseColor(course.code)}`}>
-                    {course.sections.length} Section{course.sections.length > 1 ? 's' : ''}
-                    {selectedDay && (
-                      <span className="ml-1 text-gray-500">({selectedDay})</span>
-                    )}
+                    {course.sections.length} 
                   </div>
                 </button>
 
@@ -157,7 +154,40 @@ const CourseList = ({ courses, selectedCourses, onCourseSelection, onRemoveCours
                         <div className="flex items-center justify-between mb-2">
                           <div className="font-medium text-gray-900">{section.section}</div>
                           <div className="text-xs text-gray-500">
-                            {section.schedule.length} ders saati
+                            {(() => {
+                              // OzU ders sistemi: Her ders 50dk, teneffüs 10dk
+                              const calculateActualDuration = (startTime, endTime) => {
+                                const [startHour, startMin] = startTime.split(':').map(Number);
+                                const [endHour, endMin] = endTime.split(':').map(Number);
+                                
+                                const startInMinutes = startHour * 60 + startMin;
+                                const endInMinutes = endHour * 60 + endMin;
+                                const totalDuration = endInMinutes - startInMinutes;
+                                
+                                // Kaç ders slotu olduğunu hesapla (her slot 50dk ders + 10dk teneffüs = 60dk)
+                                const numberOfSlots = Math.ceil(totalDuration / 60);
+                                
+                                // Son slotta teneffüs yok, bu yüzden son 10dk'yı çıkar
+                                const actualDuration = numberOfSlots * 50;
+                                
+                                return actualDuration;
+                              };
+                              
+                              const totalActualMinutes = section.schedule.reduce((total, slot) => {
+                                return total + calculateActualDuration(slot.start, slot.end);
+                              }, 0);
+                              
+                              const hours = Math.floor(totalActualMinutes / 60);
+                              const minutes = totalActualMinutes % 60;
+                              
+                              if (hours > 0 && minutes > 0) {
+                                return `${hours}s ${minutes}dk`;
+                              } else if (hours > 0) {
+                                return `${hours} saat`;
+                              } else {
+                                return `${minutes} dakika`;
+                              }
+                            })()}
                           </div>
                         </div>
                         
@@ -170,9 +200,7 @@ const CourseList = ({ courses, selectedCourses, onCourseSelection, onRemoveCours
                           {section.schedule.map((slot, slotIndex) => (
                             <div key={slotIndex} className="flex items-center space-x-2 text-xs text-gray-600">
                               <Clock className="h-3 w-3" />
-                              <span>{slot.day} {slot.start}</span>
-                              <span className="text-gray-400">•</span>
-                              <span>{slot.room}</span>
+                              <span>{slot.day} {slot.start} - {slot.end}</span>
                             </div>
                           ))}
                         </div>
