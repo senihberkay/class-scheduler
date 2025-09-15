@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Script'in doğru dizinden çalıştırıldığından emin ol
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
 echo "🚀 OZUchedule V2 - Tam Stack Uygulama Başlatılıyor..."
 echo "=================================================="
 
