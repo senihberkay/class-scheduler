@@ -12,14 +12,16 @@ OZUchedule V2, Özyeğin Üniversitesi öğrencilerinin ders programlarını kol
 - **Renk Kodlu Görselleştirme**: Her ders için farklı renk
 - **Mobil Uyumlu**: Tüm cihazlarda mükemmel deneyim
 - **API Tabanlı**: Modüler ve genişletilebilir mimari
+- **Akıllı Veri Yönetimi**: SQLite veritabanı + CSV fallback sistemi
+- **Otomatik Term Seçimi**: En güncel ders dönemini otomatik kullanır
 
 ## 🏗️ Sistem Mimarisi
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   React.js      │    │   FastAPI       │    │   JSON/CSV      │
+│   React.js      │    │   FastAPI       │    │ SQLite/CSV/JSON │
 │   Frontend      │◄──►│   Backend       │◄──►│   Veri Katmanı  │
-│   (Port 3000)   │    │   (Port 8001)   │    │                 │
+│   (Port 3000)   │    │   (Port 8001)   │    │  (Otomatik)     │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
@@ -139,6 +141,10 @@ v2/
 │   │   └── index.js        # Giriş noktası
 │   ├── package.json         # Node.js bağımlılıkları
 │   └── Dockerfile          # Frontend Docker yapılandırması
+├── scraper/
+│   ├── courses.db          # SQLite veritabanı (güncel veriler)
+│   ├── courses.csv         # CSV fallback verisi
+│   └── scrape.py           # Veri toplama scripti
 ├── docker-compose.yml       # Docker Compose yapılandırması
 ├── start.sh                 # Yerel başlatma scripti
 ├── stop.sh                  # Yerel durdurma scripti
@@ -224,6 +230,17 @@ curl -X POST http://localhost:8001/generate-schedule \
 - **Gerçek Zamanlı Güncelleme**: Anlık program değişiklikleri
 
 ## 📊 Veri Modeli
+
+### Veri Kaynakları
+
+Backend **akıllı veri yönetimi** sistemi ile çalışır:
+
+1. **Birincil Kaynak**: `v2/scraper/courses.db` (SQLite veritabanı)
+   - En güncel term verilerini otomatik seçer
+   - Şu anda: 2025-2026 Güz (Term: 202510) - 519 ders
+2. **Fallback 1**: `v2/scraper/courses.csv` 
+3. **Fallback 2**: `v2/backend/courses.csv`
+4. **Son Çare**: Örnek veri oluşturur
 
 ### JSON Formatı
 
@@ -333,8 +350,12 @@ docker-compose -f docker-compose.nginx.yml up --build
 #### Genel Sorunlar
 1. **CORS Hatası**: Backend CORS ayarlarını kontrol edin
 2. **Port Çakışması**: 3000 ve 8001 portlarının boş olduğundan emin olun
-3. **Veri Yükleme Hatası**: CSV dosyasının doğru konumda olduğunu kontrol edin
+3. **Veri Yükleme Hatası**: 
+   - SQLite veritabanının var olduğunu kontrol edin: `v2/scraper/courses.db`
+   - Fallback CSV dosyalarının yerinde olduğunu kontrol edin
+   - Backend loglarında "En yeni term kullanılıyor" mesajını arayın
 4. **Script Çalışmıyor**: `chmod +x *.sh` ile scriptleri çalıştırılabilir yapın
+5. **Veritabanı Erişim Hatası**: SQLite dosya izinlerini kontrol edin
 
 #### Docker Sorunları
 1. **Docker Çalışmıyor**: `docker info` ile Docker'ın çalıştığını kontrol edin
