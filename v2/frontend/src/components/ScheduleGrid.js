@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Clock, MapPin, User, X } from 'lucide-react';
+import { Calendar, MapPin, User, X } from 'lucide-react';
 
 const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse }) => {
   const days = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma'];
@@ -65,14 +65,40 @@ const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse }) => {
     return courses;
   };
 
-  // Ders süresini hesapla - Gerçek süreye göre
-  const getDurationHeight = (duration) => {
-    return Math.max(1, duration) * 60; // 60px per hour
-  };
-
-  // CSS Grid için slot span hesaplama
-  const getSlotSpan = (duration) => {
-    return Math.max(1, duration); // 1 saat = 1 slot, 2 saat = 2 slot, 3 saat = 3 slot
+  // Belirli bir time slot'un bir dersin devamı olup olmadığını kontrol et
+  const isContinuationSlot = (day, timeSlot) => {
+    const [currentStartTime] = timeSlot.split('-');
+    
+    // Seçilen derslerden bu günde daha önceki saatlerde başlayan dersler var mı?
+    for (const course of selectedCourses) {
+      for (const slot of course.schedule) {
+        if (slot.day === day && slot.duration > 1) {
+          // Bu dersin başlangıç saati mevcut slot'un başlangıcından önce mi?
+          // Ve dersin süresi bu slot'u kapsıyor mu?
+          
+          const slotStartTime = slot.start; // Örnek: "13:40"
+          
+          // Eğer slot bu dersin başlangıç saati değilse ve dersin süresine dahilse
+          if (slotStartTime !== currentStartTime) {
+            // Zaman sırasını kontrol et - slot başlangıcından sonraki slotlar devam slot'u olabilir
+            const timeSlotIndex = timeSlots.findIndex(ts => ts.startsWith(currentStartTime));
+            const courseSlotIndex = timeSlots.findIndex(ts => ts.startsWith(slotStartTime));
+            
+            // Eğer mevcut slot, dersin başladığı slottan sonra ve dersin süresi kapsamında ise
+            if (timeSlotIndex > courseSlotIndex && 
+                timeSlotIndex <= courseSlotIndex + slot.duration - 1) {
+              return {
+                isContinuation: true,
+                originalCourse: course,
+                originalSlot: slot
+              };
+            }
+          }
+        }
+      }
+    }
+    
+    return { isContinuation: false };
   };
 
   return (
@@ -116,47 +142,81 @@ const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse }) => {
               {/* Günler */}
               {days.map((day) => {
                 const courses = getCoursesForTimeSlot(day, timeSlot);
+                const continuationInfo = isContinuationSlot(day, timeSlot);
                 
                 return (
                   <div key={day} className="p-1 border-r border-gray-200 last:border-r-0 min-h-[60px] relative">
-                    {courses.length > 0 ? (
+                    {continuationInfo.isContinuation ? (
+                      // Bu slot bir dersin devamı
+                      <div
+                        className={`p-2 rounded text-white text-xs relative ${getCourseColor(continuationInfo.originalCourse.code)}`}
+                        style={{
+                          height: '52px',
+                          minHeight: '40px',
+                          position: 'absolute',
+                          top: '4px',
+                          left: '4px',
+                          right: '4px',
+                          zIndex: 5,
+                          opacity: 0.7,
+                          border: '2px dashed rgba(255,255,255,0.4)',
+                          borderTop: '2px solid rgba(255,255,255,0.6)'
+                        }}
+                      >
+                        <div className="font-medium text-center opacity-90 text-xs">
+                          {continuationInfo.originalCourse.code}
+                        </div>
+                        <div className="text-xs opacity-70 text-center">{continuationInfo.originalCourse.section}</div>
+                        <div className="text-xs opacity-60 text-center mt-1">(devamı)</div>
+                      </div>
+                    ) : courses.length > 0 ? (
                       <div className="space-y-1">
-                        {courses.map((course, courseIndex) => (
-                          <div
-                            key={courseIndex}
-                            className={`p-2 rounded text-white text-xs relative group ${course.color}`}
-                            style={{
-                              height: `${getDurationHeight(course.duration)}px`,
-                              minHeight: '40px',
-                              position: 'absolute',
-                              top: '4px',
-                              left: '4px',
-                              right: '4px',
-                              zIndex: 10
-                            }}
-                          >
-                            <div className="font-medium">{course.course_code}</div>
-                            <div className="text-xs opacity-90">{course.section}</div>
-                            <div className="text-xs opacity-75 mt-1">
-                              {course.start_time} - {course.end_time}
-                            </div>
-                            <div className="flex items-center space-x-1 mt-1 opacity-75">
-                              <MapPin className="h-3 w-3" />
-                              <span>{course.room}</span>
-                            </div>
-                            {/* Takvimdeki derslere silme butonu - Hover'da görünür */}
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                onRemoveCourse(course.course_code, course.section);
+                        {courses.map((course, courseIndex) => {
+                          // Dersin gerçek yüksekliğini hesapla
+                          const actualHeight = course.duration > 1 ? (course.duration * 60) : 52;
+                          
+                          return (
+                            <div
+                              key={courseIndex}
+                              className={`p-2 rounded text-white text-xs relative group ${course.color}`}
+                              style={{
+                                height: `${actualHeight}px`,
+                                minHeight: '40px',
+                                position: 'absolute',
+                                top: '4px',
+                                left: '4px',
+                                right: '4px',
+                                zIndex: 10
                               }}
-                              className="absolute top-1 right-1 text-white hover:text-red-200 transition-colors opacity-0 group-hover:opacity-100 bg-black bg-opacity-20 rounded-full p-1"
-                              title="Dersi kaldır"
                             >
-                              <X className="h-3 w-3" />
-                            </button>
-                          </div>
-                        ))}
+                              <div className="font-medium">{course.course_code}</div>
+                              <div className="text-xs opacity-90">{course.section}</div>
+                              <div className="text-xs opacity-75 mt-1">
+                                {course.start_time} - {course.end_time}
+                              </div>
+                              {course.duration > 1 && (
+                                <div className="text-xs opacity-75 mt-1 font-medium">
+                                  ({course.duration} saat)
+                                </div>
+                              )}
+                              <div className="flex items-center space-x-1 mt-1 opacity-75">
+                                <MapPin className="h-3 w-3" />
+                                <span>{course.room}</span>
+                              </div>
+                              {/* Takvimdeki derslere silme butonu - Hover'da görünür */}
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  onRemoveCourse(course.course_code, course.section);
+                                }}
+                                className="absolute top-1 right-1 text-white hover:text-red-200 transition-colors opacity-0 group-hover:opacity-100 bg-black bg-opacity-20 rounded-full p-1"
+                                title="Dersi kaldır"
+                              >
+                                <X className="h-3 w-3" />
+                              </button>
+                            </div>
+                          );
+                        })}
                       </div>
                     ) : (
                       <div className="h-full flex items-center justify-center">

@@ -74,9 +74,15 @@ def load_courses_data():
                                     # Süre hesaplama (dakika cinsinden)
                                     duration_minutes = end_total_minutes - start_total_minutes
                                     
-                                    # Saat cinsine çevir (minimum 1 saat)
-                                    duration_hours = max(1, duration_minutes // 60)
-                                    
+                                    # Slot sayısına çevir - Her slot 50 dakika + 10 dakika ara
+                                    # 13:40-16:30 = 170 dakika = 3 slot (13:40-14:30, 14:40-15:30, 15:40-16:30)
+                                    if duration_minutes >= 150:  # 2.5+ saat ise 3 slot
+                                        duration_hours = 3
+                                    elif duration_minutes >= 90:  # 1.5+ saat ise 2 slot
+                                        duration_hours = 2
+                                    else:
+                                        duration_hours = 1
+                                        
                                     schedule_slots.append({
                                         "day": day,
                                         "start": start_time,
