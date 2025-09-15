@@ -1,0 +1,154 @@
+import React, { useState } from 'react';
+import { Search, BookOpen, Clock, User, X } from 'lucide-react';
+
+const CourseList = ({ courses, selectedCourses, onCourseSelection, onRemoveCourse }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [expandedCourses, setExpandedCourses] = useState(new Set());
+
+  // Arama filtresi
+  const filteredCourses = courses.filter(course =>
+    course.code.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    course.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Ders genişletme/daraltma
+  const toggleCourseExpansion = (courseCode) => {
+    const newExpanded = new Set(expandedCourses);
+    if (newExpanded.has(courseCode)) {
+      newExpanded.delete(courseCode);
+    } else {
+      newExpanded.add(courseCode);
+    }
+    setExpandedCourses(newExpanded);
+  };
+
+  // Seçili ders kontrolü
+  const isCourseSelected = (course, section) => {
+    return selectedCourses.some(c => 
+      c.code === course.code && c.section === section.section
+    );
+  };
+
+  // Gelişmiş renk oluşturma sistemi
+  const getCourseColor = (courseCode) => {
+    const colors = [
+      'bg-blue-100 text-blue-800',
+      'bg-green-100 text-green-800',
+      'bg-purple-100 text-purple-800',
+      'bg-orange-100 text-orange-800',
+      'bg-red-100 text-red-800',
+      'bg-yellow-100 text-yellow-800',
+      'bg-indigo-100 text-indigo-800',
+      'bg-pink-100 text-pink-800',
+      'bg-teal-100 text-teal-800',
+      'bg-cyan-100 text-cyan-800',
+      'bg-lime-100 text-lime-800',
+      'bg-amber-100 text-amber-800',
+      'bg-emerald-100 text-emerald-800',
+      'bg-violet-100 text-violet-800',
+      'bg-rose-100 text-rose-800',
+      'bg-sky-100 text-sky-800'
+    ];
+    
+    // Ders koduna göre tutarlı renk seçimi
+    let hash = 0;
+    for (let i = 0; i < courseCode.length; i++) {
+      hash = courseCode.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const index = Math.abs(hash) % colors.length;
+    return colors[index];
+  };
+
+  return (
+    <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+      {/* Header */}
+      <div className="p-4 border-b border-gray-200">
+        <h2 className="text-lg font-semibold text-gray-900 mb-3">Dersler</h2>
+        
+        {/* Arama */}
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+          <input
+            type="text"
+            placeholder="Ders ara..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ozu-blue focus:border-transparent"
+          />
+        </div>
+      </div>
+
+      {/* Ders Listesi - Seçili dersler bölümünü kaldırdık */}
+      <div className="max-h-96 overflow-y-auto">
+        {filteredCourses.length === 0 ? (
+          <div className="p-4 text-center text-gray-500">
+            Ders bulunamadı
+          </div>
+        ) : (
+          <div className="divide-y divide-gray-200">
+            {filteredCourses.map((course) => (
+              <div key={course.code} className="p-4">
+                <button
+                  onClick={() => toggleCourseExpansion(course.code)}
+                  className="w-full text-left flex items-center justify-between hover:bg-gray-50 p-2 rounded transition-colors"
+                >
+                  <div className="flex items-center space-x-3">
+                    <BookOpen className="h-5 w-5 text-gray-400" />
+                    <div>
+                      <div className="font-medium text-gray-900">{course.code}</div>
+                      <div className="text-sm text-gray-600">{course.name}</div>
+                    </div>
+                  </div>
+                  <div className={`text-xs px-2 py-1 rounded-full ${getCourseColor(course.code)}`}>
+                    {course.sections.length} Section
+                  </div>
+                </button>
+
+                {expandedCourses.has(course.code) && (
+                  <div className="mt-3 space-y-2">
+                    {course.sections.map((section, index) => (
+                      <div
+                        key={index}
+                        className={`p-3 rounded-lg border cursor-pointer transition-colors ${
+                          isCourseSelected(course, section)
+                            ? 'border-ozu-blue bg-ozu-blue bg-opacity-10'
+                            : 'border-gray-200 hover:border-gray-300'
+                        }`}
+                        onClick={() => onCourseSelection(course, section)}
+                      >
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="font-medium text-gray-900">{section.section}</div>
+                          <div className="text-xs text-gray-500">
+                            {section.schedule.length} ders saati
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center space-x-2 text-xs text-gray-600 mb-2">
+                          <User className="h-3 w-3" />
+                          <span>{section.instructor}</span>
+                        </div>
+                        
+                        <div className="space-y-1">
+                          {section.schedule.map((slot, slotIndex) => (
+                            <div key={slotIndex} className="flex items-center space-x-2 text-xs text-gray-600">
+                              <Clock className="h-3 w-3" />
+                              <span>{slot.day} {slot.start}</span>
+                              <span className="text-gray-400">•</span>
+                              <span>{slot.room}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default CourseList;
