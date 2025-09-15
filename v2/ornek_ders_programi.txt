@@ -1,0 +1,78 @@
+==============================================
+           HAFTALIK DERS PROGRAMI
+==============================================
+
+Toplam Seçili Ders Sayısı: 3
+
+SEÇİLİ DERSLER:
+==============================================
+1. COMP 102 - Introduction to Computer Programming
+   Bölüm: 01
+   Öğretim Görevlisi: Dr. Ahmet Yılmaz
+   Program:
+     Pazartesi: 09:40 - 11:30 (2 saat) - AB-101
+     Çarşamba: 09:40 - 10:30 - AB-101
+
+2. MATH 150 - Calculus I
+   Bölüm: 02
+   Öğretim Görevlisi: Prof. Dr. Ayşe Kaya
+   Program:
+     Salı: 11:40 - 12:30 - CD-201
+     Perşembe: 11:40 - 12:30 - CD-201
+
+3. ENG 101 - Academic English
+   Bölüm: 03
+   Öğretim Görevlisi: John Smith
+   Program:
+     Pazartesi: 14:40 - 15:30 - EF-301
+     Çarşamba: 14:40 - 15:30 - EF-301
+
+
+GÜNLÜK PROGRAM:
+==============================================
+
+PAZARTESİ:
+----------------------------------------------
+09:40 - 11:30  COMP 102 (01)
+                    Introduction to Computer Programming
+                    Öğr. Gör.: Dr. Ahmet Yılmaz
+                    Oda: AB-101 (2 saat)
+
+14:40 - 15:30  ENG 101 (03)
+                    Academic English
+                    Öğr. Gör.: John Smith
+                    Oda: EF-301
+
+SALI:
+----------------------------------------------
+11:40 - 12:30  MATH 150 (02)
+                    Calculus I
+                    Öğr. Gör.: Prof. Dr. Ayşe Kaya
+                    Oda: CD-201
+
+ÇARŞAMBA:
+----------------------------------------------
+09:40 - 10:30  COMP 102 (01)
+                    Introduction to Computer Programming
+                    Öğr. Gör.: Dr. Ahmet Yılmaz
+                    Oda: AB-101
+
+14:40 - 15:30  ENG 101 (03)
+                    Academic English
+                    Öğr. Gör.: John Smith
+                    Oda: EF-301
+
+PERŞEMBE:
+----------------------------------------------
+11:40 - 12:30  MATH 150 (02)
+                    Calculus I
+                    Öğr. Gör.: Prof. Dr. Ayşe Kaya
+                    Oda: CD-201
+
+CUMA:
+----------------------------------------------
+Bu günde ders yok.
+
+==============================================
+Oluşturulma Tarihi: 15.09.2025 14:30:45
+==============================================
