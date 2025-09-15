@@ -19,7 +19,7 @@ OZUchedule V2, Özyeğin Üniversitesi öğrencilerinin ders programlarını kol
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   React.js      │    │   FastAPI       │    │   JSON/CSV      │
 │   Frontend      │◄──►│   Backend       │◄──►│   Veri Katmanı  │
-│   (Port 3000)   │    │   (Port 8000)   │    │                 │
+│   (Port 3000)   │    │   (Port 8001)   │    │                 │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
@@ -30,6 +30,16 @@ OZUchedule V2, Özyeğin Üniversitesi öğrencilerinin ders programlarını kol
 - **Backend**: Python 3.10+
 - **Frontend**: Node.js 18+
 - **Docker**: (Opsiyonel)
+
+### 🎯 Tek Komutla Başlatma
+
+```bash
+# Tüm uygulamayı başlat (Backend + Frontend)
+./start.sh
+
+# Uygulamaları durdur
+./stop.sh
+```
 
 ### Yerel Geliştirme
 
@@ -47,7 +57,7 @@ source venv/bin/activate  # Linux/Mac
 pip install -r requirements.txt
 
 # Uygulamayı başlat
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+uvicorn main:app --reload --host 0.0.0.0 --port 8001
 ```
 
 #### 2. Frontend Kurulumu
@@ -109,15 +119,15 @@ v2/
 
 ```bash
 # Dersleri listele
-curl http://localhost:8000/courses
+curl http://localhost:8001/courses
 
 # Çakışma kontrolü
-curl -X POST http://localhost:8000/check-conflicts \
+curl -X POST http://localhost:8001/check-conflicts \
   -H "Content-Type: application/json" \
   -d '{"courses": ["MAT101", "PHY101"]}'
 
 # Program oluştur
-curl -X POST http://localhost:8000/generate-schedule \
+curl -X POST http://localhost:8001/generate-schedule \
   -H "Content-Type: application/json" \
   -d '{"selected_courses": ["MAT101", "PHY101"]}'
 ```
@@ -229,7 +239,7 @@ npm run build
 
 # Backend production
 cd v2/backend
-uvicorn main:app --host 0.0.0.0 --port 8000
+uvicorn main:app --host 0.0.0.0 --port 8001
 ```
 
 ### Docker Deployment
@@ -247,8 +257,9 @@ docker-compose -f docker-compose.nginx.yml up --build
 ### Yaygın Sorunlar
 
 1. **CORS Hatası**: Backend CORS ayarlarını kontrol edin
-2. **Port Çakışması**: 3000 ve 8000 portlarının boş olduğundan emin olun
+2. **Port Çakışması**: 3000 ve 8001 portlarının boş olduğundan emin olun
 3. **Veri Yükleme Hatası**: CSV dosyasının doğru konumda olduğunu kontrol edin
+4. **Script Çalışmıyor**: `chmod +x start.sh stop.sh` ile scriptleri çalıştırılabilir yapın
 
 ### Log Kontrolü
 
