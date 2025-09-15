@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Calendar, MapPin, User, X, Download, Trash2, ChevronDown } from 'lucide-react';
+import { Calendar, User, X, Download, Trash2, ChevronDown } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 import html2canvas from 'html2canvas';
 
@@ -435,8 +435,7 @@ const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse, onClearAll })
                                 zIndex: 10
                               }}
                             >
-                              <div className="font-medium">{course.course_code}</div>
-                              <div className="text-xs opacity-90">{course.section}</div>
+                              <div className="font-medium">{course.section}</div>
                               <div className="text-xs opacity-75 mt-1">
                                 {course.start_time} - {course.end_time}
                               </div>
@@ -445,10 +444,6 @@ const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse, onClearAll })
                                   ({course.duration} saat)
                                 </div>
                               )}
-                              <div className="flex items-center space-x-1 mt-1 opacity-75">
-                                <MapPin className="h-3 w-3" />
-                                <span>{course.room}</span>
-                              </div>
                               {/* Takvimdeki derslere silme butonu - Hover'da görünür */}
                               <button
                                 onClick={(e) => {
