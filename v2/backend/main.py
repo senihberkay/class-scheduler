@@ -25,7 +25,7 @@ app.add_middleware(
 def load_courses_data():
     """CSV dosyasından ders verilerini yükler ve JSON formatına dönüştürür"""
     try:
-        csv_path = "courses_202420.csv"
+        csv_path = "courses.csv"
         if not os.path.exists(csv_path):
             return create_sample_data()
         
@@ -139,40 +139,105 @@ async def get_courses():
 async def health_check():
     return {"status": "healthy", "timestamp": datetime.now().isoformat()}
 
+def time_to_minutes(time_str):
+    """Saat:dakika formatını toplam dakikaya çevirir"""
+    try:
+        hour, minute = map(int, time_str.split(':'))
+        return hour * 60 + minute
+    except:
+        return 0
+
+def time_intervals_overlap(start1, end1, start2, end2):
+    """İki zaman aralığının kesişip kesişmediğini kontrol eder"""
+    start1_min = time_to_minutes(start1)
+    end1_min = time_to_minutes(end1)
+    start2_min = time_to_minutes(start2)
+    end2_min = time_to_minutes(end2)
+    
+    # Aralıklar kesişiyor mu kontrol et
+    return start1_min < end2_min and start2_min < end1_min
+
 @app.post("/check-conflicts")
 async def check_conflicts(request: Dict[str, Any]):
     """Seçilen dersler arasında çakışma kontrolü yapar"""
     try:
-        course_codes = request.get("courses", [])
+        # Request formatı: {"course_selections": [{"course_code": "MAT101", "section": "A1"}, ...]}
+        course_selections = request.get("course_selections", [])
         conflicts = []
         
-        # Seçilen dersleri bul
-        selected_courses = []
-        for course_code in course_codes:
+        # Seçilen ders-section kombinasyonlarını bul
+        selected_schedule_slots = []
+        for selection in course_selections:
+            course_code = selection.get("course_code")
+            selected_section = selection.get("section")
+            
+            # İlgili dersi bul
             for course in courses_data["courses"]:
                 if course["code"] == course_code:
-                    selected_courses.append(course)
+                    # Belirtilen section'ı bul
+                    for section in course["sections"]:
+                        if section["section"] == selected_section:
+                            # Bu section'ın tüm saat slotlarını ekle
+                            for slot in section["schedule"]:
+                                selected_schedule_slots.append({
+                                    "course_code": course_code,
+                                    "course_name": course["name"],
+                                    "section": selected_section,
+                                    "instructor": section["instructor"],
+                                    "slot": slot
+                                })
+                            break
                     break
         
-        # Çakışma kontrolü
-        for i, course1 in enumerate(selected_courses):
-            for section1 in course1["sections"]:
-                for slot1 in section1["schedule"]:
-                    for j, course2 in enumerate(selected_courses[i+1:], i+1):
-                        for section2 in course2["sections"]:
-                            for slot2 in section2["schedule"]:
-                                # Aynı gün ve saatte çakışma kontrolü
-                                if (slot1["day"] == slot2["day"] and 
-                                    slot1["start"] == slot2["start"]):
-                                    conflicts.append({
-                                        "course1": course1["code"],
-                                        "section1": section1["section"],
-                                        "course2": course2["code"],
-                                        "section2": section2["section"],
-                                        "day": slot1["day"],
-                                        "time": slot1["start"],
-                                        "room": slot1.get("room", "EF 210")
-                                    })
+        # Çakışma kontrolü - sadece seçilen slot'lar arasında
+        for i, slot_info1 in enumerate(selected_schedule_slots):
+            for j, slot_info2 in enumerate(selected_schedule_slots[i+1:], i+1):
+                slot1 = slot_info1["slot"]
+                slot2 = slot_info2["slot"]
+                
+                # Aynı gün kontrolü
+                if slot1["day"] == slot2["day"]:
+                    # Bitiş zamanlarını hesapla (eğer yoksa duration kullan)
+                    end1 = slot1.get("end")
+                    if not end1 and "duration" in slot1:
+                        # Duration'dan bitiş zamanını hesapla
+                        start_minutes = time_to_minutes(slot1["start"])
+                        end_minutes = start_minutes + (slot1["duration"] * 60)
+                        end_hour = end_minutes // 60
+                        end_min = end_minutes % 60
+                        end1 = f"{end_hour:02d}:{end_min:02d}"
+                    
+                    end2 = slot2.get("end")
+                    if not end2 and "duration" in slot2:
+                        # Duration'dan bitiş zamanını hesapla
+                        start_minutes = time_to_minutes(slot2["start"])
+                        end_minutes = start_minutes + (slot2["duration"] * 60)
+                        end_hour = end_minutes // 60
+                        end_min = end_minutes % 60
+                        end2 = f"{end_hour:02d}:{end_min:02d}"
+                    
+                    # Zaman aralığı kesişimi kontrolü
+                    if time_intervals_overlap(
+                        slot1["start"], 
+                        end1 or slot1["start"],  # Fallback olarak start zamanını kullan
+                        slot2["start"], 
+                        end2 or slot2["start"]
+                    ):
+                        conflicts.append({
+                            "course1": slot_info1["course_code"],
+                            "course1_name": slot_info1["course_name"],
+                            "section1": slot_info1["section"],
+                            "instructor1": slot_info1["instructor"],
+                            "course2": slot_info2["course_code"],
+                            "course2_name": slot_info2["course_name"],
+                            "section2": slot_info2["section"],
+                            "instructor2": slot_info2["instructor"],
+                            "day": slot1["day"],
+                            "time1": f"{slot1['start']}-{end1 or slot1['start']}",
+                            "time2": f"{slot2['start']}-{end2 or slot2['start']}",
+                            "room1": slot1.get("room", "EF 210"),
+                            "room2": slot2.get("room", "EF 210")
+                        })
         
         return {
             "has_conflicts": len(conflicts) > 0,
@@ -186,7 +251,8 @@ async def check_conflicts(request: Dict[str, Any]):
 async def generate_schedule(request: Dict[str, Any]):
     """Seçilen dersler için program oluşturur"""
     try:
-        selected_course_codes = request.get("selected_courses", [])
+        # Request formatı: {"course_selections": [{"course_code": "MAT101", "section": "A1"}, ...]}
+        course_selections = request.get("course_selections", [])
         schedule = {}
         
         # Günler listesi
@@ -200,26 +266,32 @@ async def generate_schedule(request: Dict[str, Any]):
                     time_key = f"{hour:02d}:{minute:02d}"
                     schedule[day][time_key] = []
         
-        # Seçilen dersleri programa ekle
-        for course_code in selected_course_codes:
+        # Seçilen ders-section kombinasyonlarını programa ekle
+        for selection in course_selections:
+            course_code = selection.get("course_code")
+            selected_section = selection.get("section")
+            
+            # İlgili dersi bul
             for course in courses_data["courses"]:
                 if course["code"] == course_code:
-                    # İlk section'ı al (frontend'de seçim yapılacak)
-                    if course["sections"]:
-                        section = course["sections"][0]
-                        for slot in section["schedule"]:
-                            day = slot["day"]
-                            start_time = slot["start"]
-                            
-                            if day in schedule and start_time in schedule[day]:
-                                schedule[day][start_time].append({
-                                    "code": course["code"],
-                                    "name": course["name"],
-                                    "section": section["section"],
-                                    "instructor": section["instructor"],
-                                    "duration": slot["duration"],
-                                    "room": slot.get("room", "EF 210")
-                                })
+                    # Belirtilen section'ı bul
+                    for section in course["sections"]:
+                        if section["section"] == selected_section:
+                            # Bu section'ın saat slotlarını programa ekle
+                            for slot in section["schedule"]:
+                                day = slot["day"]
+                                start_time = slot["start"]
+                                
+                                if day in schedule and start_time in schedule[day]:
+                                    schedule[day][start_time].append({
+                                        "code": course["code"],
+                                        "name": course["name"],
+                                        "section": section["section"],
+                                        "instructor": section["instructor"],
+                                        "duration": slot["duration"],
+                                        "room": slot.get("room", "EF 210")
+                                    })
+                            break
                     break
         
         return {"schedule": schedule}
