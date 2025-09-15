@@ -8,7 +8,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
-              <Calendar className="h-8 w-8 text-ozu-blue" />
+              <Calendar className="h-8 w-8 text-ozu-red" />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">OZUchedule</h1>
                 <p className="text-sm text-gray-600">Özyeğin Üniversitesi Ders Programı</p>

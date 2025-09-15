@@ -299,7 +299,7 @@ const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse, onClearAll })
       <div className="p-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Calendar className="h-5 w-5 text-ozu-blue" />
+            <Calendar className="h-5 w-5 text-ozu-red" />
             <h2 className="text-lg font-semibold text-gray-900">Haftalık Program</h2>
           </div>
           {selectedCourses.length > 0 && (
@@ -317,7 +317,7 @@ const ScheduleGrid = ({ schedule, selectedCourses, onRemoveCourse, onClearAll })
               <div className="relative top-export-dropdown">
                 <button
                   onClick={() => setShowTopExportDropdown(!showTopExportDropdown)}
-                  className="flex items-center space-x-2 bg-ozu-blue text-white px-4 py-2 rounded-lg hover:bg-ozu-light-blue transition-colors text-sm"
+                  className="flex items-center space-x-2 bg-ozu-red text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors text-sm"
                   title="Programı export et"
                 >
                   <Download className="h-4 w-4" />

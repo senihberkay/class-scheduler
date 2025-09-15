@@ -94,7 +94,7 @@ const CourseList = ({ courses, selectedCourses, onCourseSelection, onRemoveCours
             placeholder="Ders ara..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ozu-blue focus:border-transparent"
+            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ozu-red focus:border-transparent"
           />
         </div>
 
@@ -103,7 +103,7 @@ const CourseList = ({ courses, selectedCourses, onCourseSelection, onRemoveCours
           <select
             value={selectedDay}
             onChange={(e) => setSelectedDay(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ozu-blue focus:border-transparent bg-white text-gray-700"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ozu-red focus:border-transparent bg-white text-gray-700"
           >
             <option value="">Tüm günler</option>
             {availableDays.map(day => (
@@ -146,7 +146,7 @@ const CourseList = ({ courses, selectedCourses, onCourseSelection, onRemoveCours
                         key={index}
                         className={`p-3 rounded-lg border cursor-pointer transition-colors ${
                           isCourseSelected(course, section)
-                            ? 'border-ozu-blue bg-ozu-blue bg-opacity-10'
+                            ? 'border-ozu-red bg-ozu-red bg-opacity-10'
                             : 'border-gray-200 hover:border-gray-300'
                         }`}
                         onClick={() => onCourseSelection(course, section)}

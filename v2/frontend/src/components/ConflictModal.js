@@ -84,7 +84,7 @@ const ConflictModal = ({ conflicts, onClose }) => {
             </div>
             <button
               onClick={onClose}
-              className="bg-ozu-blue text-white px-4 py-2 rounded-lg hover:bg-ozu-light-blue transition-colors"
+              className="bg-ozu-red text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors"
             >
               Anladım
             </button>
