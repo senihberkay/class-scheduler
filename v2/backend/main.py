@@ -6,6 +6,23 @@ import json
 from datetime import datetime
 import os
 import sqlite3
+import logging
+
+# Logging yapılandırması
+log_dir = "/app/logs" if os.path.exists("/app") else "."
+os.makedirs(log_dir, exist_ok=True)
+log_file = os.path.join(log_dir, "backend.log")
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_file),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+logger.info(f"Log dosyası yazılıyor: {log_file}")
 
 app = FastAPI(
     title="OZUchedule V2 API",
@@ -33,11 +50,16 @@ app.add_middleware(
 def load_courses_from_db():
     """SQLite veritabanından en yeni termin ders verilerini yükler"""
     try:
-        db_path = "../scraper/courses.db"
+        # Mutlak yol kullan - daha güvenilir
+        db_path = os.path.abspath("../scraper/courses.db")
+        
+        logger.info(f"Veritabanı aranıyor: {db_path}")
+        
         if not os.path.exists(db_path):
-            print(f"Veritabanı bulunamadı: {db_path}")
+            logger.warning(f"Veritabanı bulunamadı: {db_path}")
             return None
         
+        logger.info(f"Veritabanı bulundu: {db_path}")
         conn = sqlite3.connect(db_path)
         
         # En yeni termi bul
@@ -46,11 +68,11 @@ def load_courses_from_db():
         max_term = cursor.fetchone()[0]
         
         if not max_term:
-            print("Veritabanında term bulunamadı")
+            logger.warning("Veritabanında term bulunamadı")
             conn.close()
             return None
         
-        print(f"En yeni term kullanılıyor: {max_term}")
+        logger.info(f"En yeni term kullanılıyor: {max_term}")
         
         # En yeni termin verilerini al
         query = """
@@ -64,50 +86,56 @@ def load_courses_from_db():
         conn.close()
         
         if df.empty:
-            print(f"Term {max_term} için ders bulunamadı")
+            logger.warning(f"Term {max_term} için ders bulunamadı")
             return None
         
-        print(f"Veritabanından {len(df)} ders yüklendi")
+        logger.info(f"✅ VERİTABANINDAN {len(df)} ders başarıyla yüklendi")
         return df
         
     except Exception as e:
-        print(f"Veritabanından veri yükleme hatası: {e}")
+        logger.error(f"Veritabanından veri yükleme hatası: {e}")
         return None
 
 def load_courses_from_csv():
     """CSV dosyasından ders verilerini yükler (fallback)"""
     try:
         # İlk önce scraper klasöründeki CSV'yi dene
-        csv_path = "../scraper/courses.csv"
+        csv_path = os.path.abspath("../scraper/courses.csv")
+        logger.info(f"CSV aranıyor: {csv_path}")
+        
         if not os.path.exists(csv_path):
             # Fallback olarak mevcut dizindeki CSV'yi dene
-            csv_path = "courses.csv"
+            csv_path = os.path.abspath("courses.csv")
+            logger.info(f"Fallback CSV aranıyor: {csv_path}")
+            
             if not os.path.exists(csv_path):
-                print("CSV dosyası bulunamadı")
+                logger.warning("CSV dosyası bulunamadı")
                 return None
         
         df = pd.read_csv(csv_path)
-        print(f"CSV dosyasından {len(df)} ders yüklendi: {csv_path}")
+        logger.info(f"📄 CSV FALLBACK: {len(df)} ders yüklendi - {csv_path}")
         return df
         
     except Exception as e:
-        print(f"CSV'den veri yükleme hatası: {e}")
+        logger.error(f"CSV'den veri yükleme hatası: {e}")
         return None
 
 def load_courses_data():
     """Ders verilerini yükler ve JSON formatına dönüştürür"""
     try:
+        logger.info("🔄 Ders verileri yükleniyor...")
+        
         # Önce veritabanından dene
         df = load_courses_from_db()
         
         # Veritabanından yüklenemediyse CSV'den dene
         if df is None:
-            print("Veritabanından yüklenemedi, CSV'den deneniyor...")
+            logger.warning("Veritabanından yüklenemedi, CSV fallback stratejisi deneniyor...")
             df = load_courses_from_csv()
         
         # Hiçbirinden yüklenemediyse örnek veri oluştur
         if df is None:
-            print("Hiçbir veri kaynağından yüklenemedi, örnek veri kullanılıyor")
+            logger.error("❌ HİÇBİR VERİ KAYNAĞI BULUNAMADI - Örnek veri kullanılıyor")
             return create_sample_data()
         
         courses_dict = {}
@@ -171,7 +199,7 @@ def load_courses_data():
                                         "room": "EF 210"
                                     })
                                 except Exception as e:
-                                    print(f"Slot parse hatası: {slot}, Hata: {e}")
+                                    logger.warning(f"Slot parse hatası: {slot}, Hata: {e}")
                                     continue
             
             courses_dict[course_code]["sections"].append({
@@ -180,13 +208,16 @@ def load_courses_data():
                 "schedule": schedule_slots
             })
         
+        logger.info(f"✅ BAŞARILI: {len(courses_dict)} farklı ders kodu işlendi")
         return {"courses": list(courses_dict.values())}
     
     except Exception as e:
-        print(f"Veri yükleme hatası: {e}")
+        logger.error(f"Veri yükleme hatası: {e}")
+        logger.warning("⚠️ FALLBACK: Örnek veri kullanılıyor")
         return create_sample_data()
 
 def create_sample_data():
+    logger.warning("🔄 Örnek veri oluşturuluyor...")
     return {
         "courses": [
             {
@@ -207,7 +238,9 @@ def create_sample_data():
     }
 
 # Global veri
+logger.info("🚀 Uygulama başlatılıyor...")
 courses_data = load_courses_data()
+logger.info("✅ Veri yükleme tamamlandı, API hazır!")
 
 @app.get("/")
 async def root():
